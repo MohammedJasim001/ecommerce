@@ -1,0 +1,338 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Premium Dog Food",
+      "category": "Dog",
+      "brand": "Pedigree",
+      "price": 49.99,
+      "stock": 150,
+      "description": "High-quality dry dog food with natural ingredients.",
+      "ratings": 4.7,
+      "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "2",
+      "name": "Organic Cat Food",
+      "category": "Cat",
+      "brand": "Meow Mix",
+      "price": 39.99,
+      "stock": 200,
+      "description": "Organic and grain-free cat food for optimal health.",
+      "ratings": 4.5,
+      "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Furminator deShedding Tool",
+      "brand": "Furminator",
+      "category": "Cat",
+      "price": 29.99,
+      "description": "Reduces shedding up to 90% with regular use.",
+      "ratings": 4.7,
+      "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "4",
+      "name": "Purina Pro Plan Savor Adult",
+      "brand": "Purina Pro Plan",
+      "category": "Dog",
+      "description": "Dry dog food with a blend of crunchy kibble and tender meaty pieces.",
+      "ratings": 4.5,
+      "price": 47.99,
+      "image": "https://images.north40.com/images/48206/BA_purina_pro_plan_savor_adult_shredded_blend_beef_and_rice_formula_dry_dog_food_35lb_48206.jpg?width=900&height=900"
+    },
+    {
+      "id": "5",
+      "name": "Dog Bed",
+      "category": "Dog",
+      "brand": "Comfy Canine",
+      "price": 59.99,
+      "stock": 40,
+      "description": "Orthopedic dog bed with memory foam.",
+      "ratings": 4.8,
+      "image": "https://i5.walmartimages.com/asr/f3142e66-9ca4-49db-a229-87a09f284f22_2.4c65b46849a5e3c2540824bacc75bb48.jpeg"
+    },
+    {
+      "id": "6",
+      "name": "PetSafe Easy Walk Harness",
+      "brand": "PetSafe",
+      "category": "Dog",
+      "price": 26.99,
+      "description": "No-pull harness for easier walks.",
+      "ratings": 4.4,
+      "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": "7",
+      "name": "Whiskas Dry Cat Food",
+      "brand": "Whiskas",
+      "category": "Cat",
+      "price": 18.99,
+      "description": "Delicious dry cat food for everyday nutrition.",
+      "ratings": 4.8,
+      "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "8",
+      "name": "Catit Flower Fountain",
+      "brand": "Catit",
+      "category": " Cat",
+      "price": 29.99,
+      "description": "Fun and functional water fountain for cats.",
+      "ratings": 4.3,
+      "image": "https://th.bing.com/th/id/R.5377ab729892f331f503f716cb40dbd9?rik=op49Fv7jX7Bj8w&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2506822-center-1&ehk=PtaeHixtr%2beVcjX2AoAjx1ffGWxrMewuShfHr6pP2WI%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": "9",
+      "name": "Tidy Cats Breeze Litter System",
+      "brand": "Tidy Cats",
+      "category": "Cat",
+      "price": 29.99,
+      "description": "Innovative litter system with pellets and pads.",
+      "ratings": 4.5,
+      "image": "https://th.bing.com/th/id/OIP.e7z9Wt754RtTO58l0mXgaQHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "10",
+      "name": "Whiskas Temptations Treats",
+      "brand": "Whiskas",
+      "category": "Cat",
+      "price": 6.99,
+      "description": "Irresistible treats for your cat.",
+      "ratings": 4.7,
+      "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "11",
+      "name": "Royal Canin Oral Care",
+      "brand": "Royal Canin",
+      "category": "Cat",
+      "price": 35.99,
+      "description": "Supports dental health and reduces tartar formation.",
+      "ratings": 4.4,
+      "image": "https://th.bing.com/th/id/OIP.XrWoZ5tKrSqtJlm2hPBYfgAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "12",
+      "name": "Whiskas Grilled Slices",
+      "brand": "Whiskas",
+      "category": "Cat",
+      "price": 16.99,
+      "description": "Grilled slices in gravy for a delicious meal.",
+      "ratings": 4.5,
+      "image": "https://th.bing.com/th/id/OIP.5MXcoBk19N_eAIDao7kSiQHaH_?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "13",
+      "name": "Whiskas Meaty Selections",
+      "brand": "Whiskas",
+      "category": "Cat",
+      "price": 19.99,
+      "description": "Meaty dry food for a satisfying meal.",
+      "ratings": 4.6,
+      "image": "https://yardlands.co.nz/wp-content/uploads/2022/09/WHISKAS-MEATY-SELECTIONS.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Furminator deShedding Tool",
+      "brand": "Furminator",
+      "category": "Cat",
+      "price": 29.99,
+      "description": "Reduces shedding up to 90% with regular use.",
+      "ratings": 4.8,
+      "image": "https://s7d1.scene7.com/is/image/PETCO/1362933-center-1"
+    },
+    {
+      "id": "15",
+      "name": "Hertzko Self Cleaning Slicker Brush",
+      "brand": "Hertzko",
+      "category": "Cat",
+      "price": 19.99,
+      "description": "Easily removes loose hair and eliminates tangles.",
+      "ratings": 4.5,
+      "image": "https://th.bing.com/th/id/OIP.XI3H_MJcPEJjKYAW0IQq2AHaEz?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "16",
+      "name": "Vet's Best Waterless Cat Bath",
+      "brand": "Vet's Best",
+      "category": "Cat",
+      "price": 11.99,
+      "description": "Leave-in foam shampoo for cats.",
+      "ratings": 4.4,
+      "image": "https://th.bing.com/th/id/OIP.N1EF3aYFOimRSaJXnH_B_gHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "17",
+      "name": "Dr. Elsey's Precious Cat Ultra",
+      "brand": "Dr. Elsey's",
+      "category": "Cat",
+      "price": 17.99,
+      "description": "Clumping cat litter with superior odor control.",
+      "ratings": 4.6,
+      "image": "https://thepetstore.ae/cdn/shop/files/Dr.Elsey_sPreciousCatUltraHardClumpingScented99_DustFreecatlitter5.png?v=1693821647"
+    },
+    {
+      "id": "18",
+      "name": "K&H Pet Products Thermo-Kitty Bed",
+      "brand": "K&H Pet Products",
+      "category": "Cat",
+      "price": 49.99,
+      "description": "Heated bed for cats to stay warm and cozy.",
+      "ratings": 4.2,
+      "image": "https://img.chewy.com/is/catalog/100531_MAIN._AC_SL1500_V1479227144_.jpg"
+    },
+    {
+      "id": "19",
+      "name": "Petstages Tower of Tracks Cat Toy",
+      "brand": "Petstages",
+      "category": "Cat",
+      "price": 14.99,
+      "description": "Interactive toy with multiple levels and balls.",
+      "ratings": 4.4,
+      "image": "https://www.sheknows.com/wp-content/uploads/2023/02/petstages-tower-tracks-toy.jpg"
+    },
+    {
+      "id": "20",
+      "name": "Blue Buffalo Life Protection Formula",
+      "brand": "Blue Buffalo",
+      "category": "Dog",
+      "price": 49.99,
+      "description": "High-quality dry dog food with real meat.",
+      "ratings": 4.6,
+      "image": "https://i5.walmartimages.com/asr/88799329-25b9-484f-a57b-cdba352f0f6f.5f884cfcf1d399211ca675f66896c3e4.jpeg"
+    },
+    {
+      "id": "21",
+      "name": "PetFusion Ultimate Dog Bed",
+      "brand": "PetFusion",
+      "category": "Dog",
+      "price": 89.99,
+      "description": "Memory foam dog bed for comfort and support.",
+      "ratings": 4.4,
+      "image": "https://secure.img.wfcdn.com/lf/maxsquare/hash/21649/24307566/1/Ultimate-Dog-Lounge-PF-IBLParent.jpg"
+    },
+    {
+      "id": "22",
+      "name": "Premium Dog Food",
+      "category": "Dog",
+      "brand": "Pedigree",
+      "price": 49.99,
+      "stock": 150,
+      "description": "High-quality dry dog food with natural ingredients.",
+      "ratings": 4.7,
+      "image": "https://th.bing.com/th/id/OIP.rOmRdn2BEmb9lfqnSGKk6AAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "23",
+      "name": "Acana Heritage Meats Formula",
+      "brand": "Acana",
+      "category": "Dog",
+      "description": "A grain-free dry dog food made with beef, pork, and lamb.",
+      "price": 64.99,
+      "ratings": 4.3,
+      "image": "https://i5.walmartimages.com/asr/9485cecc-83da-4866-bf81-2c23ac15fee7_2.40b79ef04d5e0aaddb5d5768457bbee9.jpeg"
+    },
+    {
+      "id": "24",
+      "name": "Wellness CORE RawRev High-Protein",
+      "brand": "Wellness",
+      "category": "Dog",
+      "description": "High-protein, grain-free dry dog food with raw bites.",
+      "price": 75.99,
+      "ratings": 4.8,
+      "image": "https://m.media-amazon.com/images/I/71tGERDz42L.jpg"
+    },
+    {
+      "id": "25",
+      "name": "Nutro Ultra Adult Dry Dog Food",
+      "brand": "Nutro",
+      "category": "Dog",
+      "description": "Premium dry dog food with chicken, lamb, and salmon.",
+      "price": 53.99,
+      "ratings": 4.7,
+      "image": "https://petstrendstore.com/wp-content/uploads/2019/01/nutro-ultra-adult-dry-dog-food-with-a-trio-of-proteins-from-chicken-lamb-and-1024x1024.jpg"
+    },
+    {
+      "id": "26",
+      "name": "Earth Rated Dog Poop Bags",
+      "brand": "Earth Rated",
+      "category": "Dog",
+      "description": "Leak-proof and biodegradable dog poop bags.",
+      "price": 14.99,
+      "ratings": 4.5,
+      "image": "https://i5.walmartimages.com/asr/96026281-7eb9-4699-9123-d31c22f7f0da_1.23bc75f9f501af45a91d36f97cbe3129.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff"
+    },
+    {
+      "id": "27",
+      "name": "Wahl Lithium Ion Pro Series Cordless Dog Clippers",
+      "brand": "Wahl",
+      "category": "Dog",
+      "description": "Cordless dog clippers for grooming at home.",
+      "price": 59.99,
+      "ratings": 4.5,
+      "image": "https://th.bing.com/th/id/OIP.acafuPGTaGqfrC_YNPWTQwHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "28",
+      "name": "Meow Mix Tender Centers",
+      "brand": "Meow",
+      "category": "Cat",
+      "price": 20.99,
+      "description": "Crunchy outside, tender inside dry cat food.",
+      "ratings": 4.6,
+      "image": "https://th.bing.com/th/id/OIP.2nvdTMXM0gEixfkkrWm0FQHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "29",
+      "name": "Royal Canin Feline Health Nutrition",
+      "brand": "Royal Canin",
+      "category": "Cat",
+      "price": 34.99,
+      "description": "Tailored nutrition for adult cats.",
+      "ratings": 4.8,
+      "image": "https://th.bing.com/th/id/R.11af40d4361782a5f1aa4612f669faf6?rik=nnEGSYRr3CzbsQ&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f1361236-center-1&ehk=UGS9KSRt4boxCjKi9btEJmA3L%2bd9r6MboS2jqt05Qa0%3d&risl=&pid=ImgRaw&r=0"
+    }
+  ],
+  "users": [
+    {
+      "id": "2f20",
+      "name": "salman",
+      "email": "salman@gmail.com",
+      "password": "asdf",
+      "cpassword": "asdf",
+      "cart": {
+        "1": {
+          "id": "1",
+          "name": "Premium Dog Food",
+          "category": "Dog",
+          "brand": "Pedigree",
+          "price": 49.99,
+          "stock": 150,
+          "description": "High-quality dry dog food with natural ingredients.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
+        },
+        "7": {
+          "id": "7",
+          "name": "Whiskas Dry Cat Food",
+          "brand": "Whiskas",
+          "category": "Cat",
+          "price": 18.99,
+          "description": "Delicious dry cat food for everyday nutrition.",
+          "ratings": 4.8,
+          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+        }
+      }
+    },
+    {
+      "id": "3263",
+      "name": "jasim",
+      "email": "ab@gmail.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "cart": []
+    }
+  ]
+}
