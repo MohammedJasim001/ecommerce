@@ -58,7 +58,7 @@ const Content = () => {
                     <h1 className="text-2xl md:text-3xl font-sans font-bold ml-10 text-gray-900 mt-16">Popular Products</h1>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10">
                     {data.slice(0,10).map(product => (
                         <Products key={product.id} product={product} />
                     ))}

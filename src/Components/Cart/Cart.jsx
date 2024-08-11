@@ -46,10 +46,13 @@ const Cart = () => {
   }, []);
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price * item.count, 0);
+  const totalItem=cart.reduce((acc,item)=>acc+item.count,0)
 
   return (
-    <div className="md:flex">
-      <div className="md:w-[75%] grid md:grid-cols-2 gap-3">
+    <div >
+      {cart.length!==0?
+        <div className="md:flex ">
+      <div className="md:w-[70%] grid md:grid-cols-2 gap-3">
         {cart.map((e) => (
           <div
             key={e.id}
@@ -78,7 +81,7 @@ const Cart = () => {
               </button>
             </div>
 
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-around">
               <div>
                 <div className="font-bold">{e.name}</div>
                 <div>
@@ -94,24 +97,26 @@ const Cart = () => {
                   <span className="font-semibold">{e.ratings}</span>
                 </div>
               </div>
-              <Link to={"/buynow"}>
-                <button className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg w-[80%]">
-                  Buy Now
-                </button>
-              </Link>
+              <div >
+             
 
               <button
                 onClick={() => handleRemove(e)}
-                className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg w-[80%]"
+                className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg  mt-1"
               >
                 Remove Cart
               </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
-     {cart.length!==0? <div className="md:ml-[85%] md:fixed bg-white shadow-lg rounded-lg p-4 border border-gray-200 mt-5">
+      <div className="md:ml-[75%] md:fixed bg-white shadow-lg rounded-lg p-4 border border-gray-200  md:w-[300px] ">
         <h2 className="text-xl font-semibold mb-4">Price Details</h2>
+        <div className="flex justify-between mb-2">
+          <span className="font-medium">Total Item:</span>
+          <span className="font-bold">{totalItem}</span>
+        </div>
         <div className="flex justify-between mb-2">
           <span className="font-medium">Subtotal:</span>
           <span className="font-bold">${totalPrice.toFixed(2)}</span>
@@ -124,8 +129,19 @@ const Cart = () => {
           <span className="font-medium">Total:</span>
           <span className="font-bold text-2xl">${totalPrice.toFixed(2)}</span>
         </div>
-      </div>:<div>Cart is empty</div>}
+        <div>
+        <Link to={"/buynow"} >
+                <button className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
+                  Buy Now
+                </button>
+              </Link>
+        </div>
+      </div>
     </div>
+    :
+      <div className="text-xl font-bold  py-[50px]">Your Cart is empty!</div>}
+    </div>
+  
   );
 };
 

@@ -26,7 +26,7 @@ const Navbar = () => {
     
   })
    
-   console.log(results);
+   
 
   function handleChange(e){
     setInput(e.target.value) 

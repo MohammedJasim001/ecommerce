@@ -3,7 +3,7 @@ import React, { useContext} from 'react'
 import DogProducts from './DogProducts'
 import { Items } from '../MainPage/Main'
 const Dog = () => {
-  const {data,users} = useContext(Items)
+  const {data} = useContext(Items)
   return (
     <div >
       <h1 className="mb-2 text-3xl font-bold tracking-tight md:ml-10">Dog</h1>

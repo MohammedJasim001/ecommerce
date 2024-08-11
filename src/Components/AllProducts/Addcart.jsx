@@ -7,6 +7,8 @@ export const AddCarts = async (e) => {
     try {
       const res = await axios.get(`http://localhost:3000/users/${user}`);
       const cart = res.data.cart;
+
+      
      const al = Object.values(cart).filter((f)=>{
              return   f.id==e.id
      })

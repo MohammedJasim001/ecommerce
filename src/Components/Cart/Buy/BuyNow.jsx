@@ -1,6 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Items } from '../../MainPage/Main';
+import { AddBuy } from './BuyNowFunctions';
+import axios from 'axios';
 
 const BuyNow = () => {
+
+    const {datas}=useContext(Items)
+    const handleClick=(e)=>{
+        AddBuy(e)
+    }
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,7 +20,7 @@ const BuyNow = () => {
 });
 
 const [errors, setErrors] = useState({});
-
+const [cart,setCart]=useState([])
 const validate = () => {
     let tempErrors = {};
     let isValid = true;
@@ -72,8 +81,28 @@ const handleSubmit = (e) => {
     }
 };
 
+useEffect(() => {
+    const user = localStorage.getItem("id");
+    axios
+      .get(`http://localhost:3000/users/${user}`)
+      .then((res) => {
+        const cartWithCount = Object.values(res.data.cart).map((item) => ({
+          ...item,
+          count: item.count || 1,
+        }));
+        setCart(cartWithCount);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const totalPrice = cart.reduce((acc, item) => acc + item.price * item.count,0);
+  const totalItem=cart.reduce((acc,item)=>acc+item.count,0)
+
+
+
 return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg" noValidate>
+    <div>
+         <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg" noValidate>
         <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
             <input
@@ -157,13 +186,37 @@ return (
           </div>
           </div>
         </div>
-        <button
+        <button onClick={() => handleClick(cart)}
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
             Submit Payment
         </button>
     </form>
+
+
+    <div className="  bg-white shadow-lg rounded-lg p-4 border border-gray-200   ">
+        <h2 className="text-xl font-semibold mb-4">Price Details</h2>
+        <div className="flex justify-between mb-2">
+          <span className="font-medium">Total Item:</span>
+          <span className="font-bold">{totalItem}</span>
+        </div>
+        <div className="flex justify-between mb-2">
+          <span className="font-medium">Subtotal:</span>
+          <span className="font-bold">${totalPrice.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between mb-2">
+          <span className="font-medium">Shipping:</span>
+          <span className="font-bold">Free</span>
+        </div>
+        <div className="flex justify-between mb-2 border-t border-gray-300 pt-2">
+          <span className="font-medium">Total:</span>
+          <span className="font-bold text-2xl">${totalPrice.toFixed(2)}</span>
+        </div>
+      </div>  
+
+    </div>
+   
 );
 };
 
