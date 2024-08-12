@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import { AddCarts } from '../AllProducts/Addcart'
+
 
 
 const DogProducts = ({products}) => {

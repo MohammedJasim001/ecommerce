@@ -7,15 +7,6 @@ export const AddBuy = async (e) => {
       try {
         const res = await axios.get(`http://localhost:3000/users/${user}`);
         const buyProducts = res.data.buyProducts;
-        
-        
-    //    const al = Object.values(cart).filter((f)=>{
-    //            return   f.id==e.id
-    //    })
-    //    if(al.length!==0){
-    //       toast.warning('Item already exist cart')
-    //       return
-    //    }
         const updateBuy = {
           ...buyProducts,
           [e.id]: e,

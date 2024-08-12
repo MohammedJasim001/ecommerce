@@ -56,8 +56,6 @@ const Navbar = () => {
         <img onClick={handleLogout}
           className="w-6 md:w-8 ml-2 " src={signout} alt="admin" />
         <h2 className="hidden sm:block ml-2">LogOut</h2>
-   
-
      </div>
      
      

@@ -3,7 +3,7 @@ import ProductsCat from './ProductsCat'
 import { Items } from '../MainPage/Main'
 
 const Cat = () => {
-  const {data,users} = useContext(Items)
+  const {data} = useContext(Items)
   return (
     <div className='pt-5 bg-gray-100'>
       <h1 className="md:ml-10 text-3xl font-sans font-bold ">Cat </h1>

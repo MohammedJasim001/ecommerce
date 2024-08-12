@@ -2,13 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Items } from '../../MainPage/Main';
 import { AddBuy } from './BuyNowFunctions';
 import axios from 'axios';
+import { toast } from 'sonner';
+import { useNavigate } from 'react-router';
 
 const BuyNow = () => {
-
-    const {datas}=useContext(Items)
-    const handleClick=(e)=>{
-        AddBuy(e)
-    }
+   
+   
 
   const [formData, setFormData] = useState({
     name: '',
@@ -76,27 +75,25 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
+
+      AddBuy(e)
         // Handle form submission, e.g., send data to API
         console.log('Payment successful!', formData);
     }
+    else{
+        toast.warning('Please fill the form')
+    }
+   
 };
+const handleClick=(e)=>{
+    if (validate()) {
+    AddBuy(e)
+    }
+    else{
+        toast.warning('Please fill the form')
+    }
+}
 
-useEffect(() => {
-    const user = localStorage.getItem("id");
-    axios
-      .get(`http://localhost:3000/users/${user}`)
-      .then((res) => {
-        const cartWithCount = Object.values(res.data.cart).map((item) => ({
-          ...item,
-          count: item.count || 1,
-        }));
-        setCart(cartWithCount);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  const totalPrice = cart.reduce((acc, item) => acc + item.price * item.count,0);
-  const totalItem=cart.reduce((acc,item)=>acc+item.count,0)
 
 
 
@@ -186,7 +183,7 @@ return (
           </div>
           </div>
         </div>
-        <button onClick={() => handleClick(cart)}
+        <button onClick={()=>handleClick(cart)}
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
@@ -195,7 +192,7 @@ return (
     </form>
 
 
-    <div className="  bg-white shadow-lg rounded-lg p-4 border border-gray-200   ">
+    {/* <div className=" bg-white shadow-lg rounded-lg p-4 border border-gray-200   ">
         <h2 className="text-xl font-semibold mb-4">Price Details</h2>
         <div className="flex justify-between mb-2">
           <span className="font-medium">Total Item:</span>
@@ -213,7 +210,7 @@ return (
           <span className="font-medium">Total:</span>
           <span className="font-bold text-2xl">${totalPrice.toFixed(2)}</span>
         </div>
-      </div>  
+      </div>   */}
 
     </div>
    

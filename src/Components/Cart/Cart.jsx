@@ -49,7 +49,7 @@ const Cart = () => {
   const totalItem=cart.reduce((acc,item)=>acc+item.count,0)
 
   return (
-    <div >
+    <div className="min-h-screen">
       {cart.length!==0?
         <div className="md:flex ">
       <div className="md:w-[70%] grid md:grid-cols-2 gap-3">
