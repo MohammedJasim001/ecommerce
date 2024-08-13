@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
 <Toaster richColors position='top-right'/>
-      <AdminMain/>
+<AdminMain/>
       <Main/>
      
      

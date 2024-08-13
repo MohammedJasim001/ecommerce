@@ -4,6 +4,8 @@ import AdminHome from '../Home/AdminHome'
 import Users from '../Home/Users'
 import AdminProduct from '../Home/AdminProduct'
 import axios from 'axios'
+import Dashbord from '../Home/Dashbord'
+import AddProducts from '../Home/AddProducts'
 export const Products =createContext()
 
 const AdminMain = () => {
@@ -30,9 +32,12 @@ useEffect(()=>{
     <div>
         <Products.Provider value={{data,users}}>
         <Routes>
-            <Route path='/adminhome/:url' element={<AdminHome/>}/>
+            <Route path='/admin/:url' element={<AdminHome/>}/>
             <Route path='/users' element={<Users/>}/>
             <Route path='/productadmin' element={<AdminProduct/>}/>
+            <Route path='/dashbord' element={<Dashbord/>}/>
+            <Route path='/addproducts' element={<AddProducts/>}/>
+            
         </Routes>
         </Products.Provider>
     </div>

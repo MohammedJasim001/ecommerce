@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Premium Dog Food",
-      "category": "Dog",
+      "category": "dog",
       "brand": "Pedigree",
       "price": 49.99,
       "stock": 150,
@@ -266,7 +266,7 @@
     },
     {
       "id": "27",
-      "name": "Wahl Lithium Ion Pro Series Cordless Dog Clippers",
+      "name": " Cordless Dog Clippers",
       "brand": "Wahl",
       "category": "Dog",
       "description": "Cordless dog clippers for grooming at home.",
@@ -296,6 +296,41 @@
     }
   ],
   "users": [
+    {
+      "id": "be68",
+      "name": "jasim",
+      "email": "jasim@gmail.com",
+      "password": "1234",
+      "cpassword": "1234",
+      "admin": true,
+      "cart": {
+        "1": {
+          "id": "1",
+          "name": "Premium Dog Food",
+          "category": "Dog",
+          "brand": "Pedigree",
+          "price": 49.99,
+          "stock": 150,
+          "description": "High-quality dry dog food with natural ingredients.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
+        },
+        "2": {
+          "id": "2",
+          "name": "Organic Cat Food",
+          "category": "Cat",
+          "brand": "Meow Mix",
+          "price": 39.99,
+          "stock": 200,
+          "description": "Organic and grain-free cat food for optimal health.",
+          "ratings": 4.5,
+          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
+        }
+      },
+      "buyProducts": {
+        "undefined": []
+      }
+    },
     {
       "id": "2f20",
       "name": "salman",
@@ -431,38 +466,6 @@
             "count": 1
           }
         ]
-      }
-    },
-    {
-      "id": "be68",
-      "name": "jasim",
-      "email": "jasim@gmail.com",
-      "password": "1234",
-      "cpassword": "1234",
-      "admin": true,
-      "cart": {
-        "1": {
-          "id": "1",
-          "name": "Premium Dog Food",
-          "category": "Dog",
-          "brand": "Pedigree",
-          "price": 49.99,
-          "stock": 150,
-          "description": "High-quality dry dog food with natural ingredients.",
-          "ratings": 4.7,
-          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
-        },
-        "2": {
-          "id": "2",
-          "name": "Organic Cat Food",
-          "category": "Cat",
-          "brand": "Meow Mix",
-          "price": 39.99,
-          "stock": 200,
-          "description": "Organic and grain-free cat food for optimal health.",
-          "ratings": 4.5,
-          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        }
       }
     }
   ]

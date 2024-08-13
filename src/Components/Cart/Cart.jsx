@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { RemovCart } from "../AllProducts/Addcart";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+   const navigate =useNavigate()
 
   const clickIncrease = (id) => {
     setCart((prevCart) =>
@@ -130,11 +131,11 @@ const Cart = () => {
           <span className="font-bold text-2xl">${totalPrice.toFixed(2)}</span>
         </div>
         <div>
-        <Link to={"/buynow"} >
-                <button className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
+        
+                <button onClick={()=>navigate('/buynow',{state:{totalPrice,totalItem}})} className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
                   Buy Now
                 </button>
-              </Link>
+           
         </div>
       </div>
     </div>

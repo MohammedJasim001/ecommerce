@@ -1,100 +1,78 @@
-
-    import React from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-
+import AdminProduct from "./AdminProduct";
+import Users from "./Users";
+import Dashbord from "./Dashbord";
+import AddProducts from "./AddProducts";
 
 const AdminHome = () => {
-const {url}=useParams()
-  
-const Data=[{
-title:'user',
-url:'user'
-}]
+  const { url } = useParams();
+
+  const Data = [
+    {
+      title: "Users",
+      url: "user",
+    },
+    {
+      title: "Products",
+      url: "products",
+    },
+    {
+      title: "Dashboard",
+      url: "dashbord",
+    },
+    {
+      title: "Add Products",
+      url: "addproducts",
+    },
+    
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 ">
-      {/* Navbar */}
-      <nav className="bg-white shadow">
+    <div className="min-h-screen flex bg-gray-100 w-full absolute">
+     
+      <nav className="bg-white shadow w-full fixed top-0 left-0 z-10">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-semibold text-gray-800">Admin Dashboard</div>
           <div>
-            <button className="text-gray-600 hover:text-gray-900">Logout</button>
+            <Link to={"/"}>
+              <button className=" text-gray-600 hover:text-gray-900">Home</button>
+            </Link>
           </div>
         </div>
       </nav>
 
-      {/* Sidebar and Content */}
-      <div className="flex flex-1">
-        {/* Sidebar */}
-        <div className="w-64 bg-gray-800 text-white">
-          {/* <div className="px-6 py-4">
-            <ul>
-              <li className="mb-4">
-                <button className="block px-4 py-2 hover:bg-gray-700 rounded">Dashboard</button>
-              </li>
-              <li className="mb-4">
-                <Link to={'/productadmin'}>
-                  <button className="block px-4 py-2 hover:bg-gray-700 rounded">Products</button>
-                </Link>
-                
-              </li>
-              <li className="mb-4">
-                <button className="block px-4 py-2 hover:bg-gray-700 rounded">Orders</button>
-              </li>
-              <li className="mb-4">
-               <Link to={'/users'}>
-                <button className="block px-4 py-2 hover:bg-gray-700 rounded">Users</button>
-               </Link>
-                  
-               
-                
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-700 rounded">Settings</a>
-              </li>
-            </ul>
-
-          </div> */}
-
-          {Data.map((item)=(
+      <div className="flex flex-1 pt-5">
+        
+        <div className="w-72 bg-gray-800 text-white fixed top-0 left-0 h-full pt-20">
+          {Data.map((item) => (
             <Link
-             to={`/adminhome/${item.url}`}
-             >
-              {/* {item.icon} */}
-              {item.title}
-             </Link>
+              key={item.id}
+              className="block w-[80%] mx-auto"
+              to={`/admin/${item.url}`}
+            >
+              <div className="hover:bg-gray-700 rounded px-6 py-2 mb-4">
+                {item.title}
+              </div>
+            </Link>
           ))}
         </div>
-        <div>{url===''}</div>
 
-        {/* Main Content */}
-        <main className="flex-1 p-6">
-          <h1 className="text-2xl font-semibold text-gray-700">Welcome, Admin!</h1>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">Total Sales</h2>
-              <p className="text-gray-600 mt-2">$12,000</p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">Total Orders</h2>
-              <p className="text-gray-600 mt-2">150</p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">New Customers</h2>
-              <p className="text-gray-600 mt-2">20</p>
-            </div>
-          </div>
-        </main>
+     
+        <div className="ml-72 w-full p-6">
+          {url === "user" ? (
+            <Users />
+          ) : url === "products" ? (
+            <AdminProduct />
+          ) : url === "dashbord" ? (
+            <Dashbord />
+          ) : (
+            <AddProducts />
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-
-
-export default AdminHome
+export default AdminHome;

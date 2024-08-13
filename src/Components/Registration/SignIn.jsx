@@ -26,7 +26,7 @@ const SignIn = () => {
       });
 
       if (user.admin === true) {
-        navigate("/adminhome/users");
+        navigate("/admin/users");
         localStorage.setItem("id", user.id);
       } else if (user) {
         localStorage.setItem("id", user.id);

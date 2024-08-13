@@ -43,7 +43,7 @@ useEffect(()=>{
   return (
     <div className='bg-slate-100'>
        
-      <Items.Provider value={{data,users}}>
+      <Items.Provider value={{data, setData,users,setUsers}}>
       <Navbar/>
       <Routes>
       
@@ -58,7 +58,7 @@ useEffect(()=>{
         <Route path='/buynow' element={<BuyNow/>}/>
        
       </Routes>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
       <Footer/>
       </Items.Provider>
    

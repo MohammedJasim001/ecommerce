@@ -5,10 +5,10 @@ import admin from "../Assets/admin-icon.png";
 import cart from "../Assets/cart-icon.png";
 import { Items } from "../MainPage/Main";
 import SearchResults from "./SearchResults";
-import { AddCarts } from "../AllProducts/Addcart";
+
 
 const Navbar = () => {
-  const {data,users}=useContext(Items)
+  const {data}=useContext(Items)
   const [input,setInput]=useState('')
   const [isLogine,setIsLogine] = useState(false)
   function handleLogout(){
