@@ -60,15 +60,15 @@ const AdminHome = () => {
 
      
         <div className="ml-72 w-full p-6">
-          {url === "user" ? (
+          {url === "user" ? 
             <Users />
-          ) : url === "products" ? (
+           : url === "products" ? 
             <AdminProduct />
-          ) : url === "dashbord" ? (
+           : url === "dashbord" ? 
             <Dashbord />
-          ) : (
+           : 
             <AddProducts />
-          )}
+          }
         </div>
       </div>
     </div>

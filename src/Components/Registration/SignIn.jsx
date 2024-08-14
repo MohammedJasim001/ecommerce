@@ -28,7 +28,10 @@ const SignIn = () => {
       if (user.admin === true) {
         navigate("/admin/users");
         localStorage.setItem("id", user.id);
-      } else if (user) {
+        window.location.reload();
+      } 
+    
+       else if (user) {
         localStorage.setItem("id", user.id);
         navigate("/");
         window.location.reload();
@@ -36,6 +39,8 @@ const SignIn = () => {
       } else {
         toast.warning("Invalid login Details");
       }
+
+      
     } catch (err) {
       console.log("Error:", err);
     }

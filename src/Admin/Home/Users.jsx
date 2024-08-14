@@ -1,12 +1,23 @@
 import React, { useContext } from "react";
 import { Products } from "../AdminMain/AdminMain";
+import axios from "axios";
 
 const Users = () => {
   const { users } = useContext(Products);
 
+  const handleRemove=async(id)=>{
+    try{
+     await axios.delete(`http://localhost:3000/users/${id}`)
+    }
+    catch(err){
+      console.log(err);
+    }
+    window.location.reload()
+  }
+
   return (
     <div className="mt-8">
-      {/* Header */}
+      
       <ul className="flex items-center justify-around text-lg font-bold bg-gray-200 h-16 rounded-t-lg">
         <li className="px-4 py-2 w-[10%] text-center">ID</li>
         <li className="px-4 py-2 w-[20%] text-center">Name</li>
@@ -15,7 +26,7 @@ const Users = () => {
         <li className="px-4 py-2 w-[20%] text-center">Actions</li>
       </ul>
 
-      {/* User Rows */}
+      
       {users.map((user) => (
         <div
           key={user.id}
@@ -26,7 +37,8 @@ const Users = () => {
           <div className="px-4 py-2 w-[30%] text-center truncate">{user.email}</div>
           <div className="px-4 py-2 w-[20%] text-center truncate">{user.password}</div>
           <div className="flex space-x-2 px-4 py-2 justify-center w-[20%]">
-            <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300">
+            <button onClick={()=>handleRemove(user.id)}
+              className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300">
               Remove
             </button>
             <button className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition duration-300">
