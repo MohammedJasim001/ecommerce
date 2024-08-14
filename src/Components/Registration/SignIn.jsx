@@ -29,6 +29,7 @@ const SignIn = () => {
         navigate("/admin/users");
         localStorage.setItem("id", user.id);
         window.location.reload();
+        toast.success('Login successful')
       } 
     
        else if (user) {
@@ -36,7 +37,8 @@ const SignIn = () => {
         navigate("/");
         window.location.reload();
         toast.success("Login successful");
-      } else {
+      } 
+      else {
         toast.warning("Invalid login Details");
       }
 

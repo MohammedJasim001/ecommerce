@@ -1,10 +1,25 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Products } from "../AdminMain/AdminMain";
 import axios from "axios";
-import { Items } from "../../Components/MainPage/Main";
+
 
 const AdminProduct = () => {
-  const { data} = useContext(Products);
+
+  const [data,setData]=useState([])
+
+  const fn=async()=>{
+    try{
+    const response= await axios.get('http://localhost:3000/products')
+    setData(response.data)
+    }
+    catch(err){
+      console.log(err);
+      
+    }
+  }
+  useEffect(()=>{
+    fn()
+  },[])
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editProduct, setEditProduct] = useState({
@@ -30,7 +45,7 @@ const AdminProduct = () => {
     } catch (err) {
       console.error(err);
     }
-    window.location.reload()
+    fn()
   };
   const handleDelete = async (id) => {
     try {
@@ -38,7 +53,7 @@ const AdminProduct = () => {
     } catch (err) {
       console.error(err);
     }
-    window.location.reload()
+    fn()
   };
 
   return (

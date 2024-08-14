@@ -19,15 +19,17 @@ useEffect(()=>{
         setData(res.data)
       })
       .catch(err=>console.log(err))
-  
-  },[])
-  useEffect(()=>{
-    axios.get("http://localhost:3000/users")
+
+      axios.get("http://localhost:3000/users")
       .then(res=>{
         setUsers(res.data)
       })
       .catch(err=>console.log(err))
+  
   },[])
+ 
+    
+  
   return (
     <div>
         <Products.Provider value={{data,users}}>

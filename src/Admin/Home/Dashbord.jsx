@@ -1,27 +1,39 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Products } from '../AdminMain/AdminMain'
 
 const Dashbord = () => {
+
+  const {data,users} = useContext(Products)
+
+  const totalUsers= users.filter((ele)=>ele.admin!==true).length
+  
+  
   return (
     <div>
       <main className="flex-1 p-6">
-          <h1 className="text-2xl font-semibold text-gray-700">Welcome, Admin!</h1>
+        
+          <h1 className="text-2xl font-semibold text-gray-700">Lunas Pets</h1>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">Total Sales</h2>
-              <p className="text-gray-600 mt-2">$12,000</p>
+
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-xl font-semibold text-gray-800">Total Products</h2>
+          
+            <p className="text-gray-600 mt-2">{data.length}</p>
+          
+            
+              
             </div>
 
-            {/* Card 2 */}
+            
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h2 className="text-xl font-semibold text-gray-800">Total Orders</h2>
-              <p className="text-gray-600 mt-2">150</p>
+              <p className="text-gray-600 mt-2">{}</p>
             </div>
 
-            {/* Card 3 */}
+           
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">New Customers</h2>
-              <p className="text-gray-600 mt-2">20</p>
+              <h2 className="text-xl font-semibold text-gray-800">Total Customers</h2>
+              <p className="text-gray-600 mt-2">{totalUsers}</p>
             </div>
           </div>
         </main>

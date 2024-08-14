@@ -303,30 +303,7 @@
       "password": "1234",
       "cpassword": "1234",
       "admin": true,
-      "cart": {
-        "1": {
-          "id": "1",
-          "name": "Premium Dog Food",
-          "category": "Dog",
-          "brand": "Pedigree",
-          "price": 49.99,
-          "stock": 150,
-          "description": "High-quality dry dog food with natural ingredients.",
-          "ratings": 4.7,
-          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
-        },
-        "2": {
-          "id": "2",
-          "name": "Organic Cat Food",
-          "category": "Cat",
-          "brand": "Meow Mix",
-          "price": 39.99,
-          "stock": 200,
-          "description": "Organic and grain-free cat food for optimal health.",
-          "ratings": 4.5,
-          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        }
-      },
+      "cart": {},
       "buyProducts": {
         "undefined": []
       }
@@ -407,7 +384,8 @@
             "count": 1
           }
         ]
-      }
+      },
+      "blocked": true
     },
     {
       "id": "8a84",
@@ -415,7 +393,28 @@
       "email": "salman@gmail.com",
       "password": "1111",
       "cpassword": "1111",
-      "cart": []
+      "cart": {
+        "6": {
+          "id": "6",
+          "name": "PetSafe Easy Walk Harness",
+          "brand": "PetSafe",
+          "category": "Dog",
+          "price": 26.99,
+          "description": "No-pull harness for easier walks.",
+          "ratings": 4.4,
+          "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0"
+        },
+        "7": {
+          "id": "7",
+          "name": "Whiskas Dry Cat Food",
+          "brand": "Whiskas",
+          "category": "Cat",
+          "price": 18.99,
+          "description": "Delicious dry cat food for everyday nutrition.",
+          "ratings": 4.8,
+          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+        }
+      }
     }
   ]
 }

@@ -12,7 +12,7 @@ import All from '../AllProducts/All'
 import ProductLists from '../ProductLists/ProductLists'
 import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
-import { ToastContainer } from 'react-toastify'
+
 
 
 export const Items=createContext()
@@ -58,7 +58,7 @@ useEffect(()=>{
         <Route path='/buynow' element={<BuyNow/>}/>
        
       </Routes>
-      {/* <ToastContainer/> */}
+     
       <Footer/>
       </Items.Provider>
    

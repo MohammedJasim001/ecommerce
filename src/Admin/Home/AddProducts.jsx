@@ -1,17 +1,32 @@
-import React, { useContext, useState } from "react";
-import { Products } from "../AdminMain/AdminMain";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { toast } from "sonner";
 
 const AddProducts = () => {
+  const navigate = useNavigate();
+  
 
-  const navigate=useNavigate()
-  const { data, setData } = useContext(Products);
+  const [data,setData]=useState([])
+
+  const fn = async() =>{
+    try{
+      const response= await axios.get('http://localhost:3000/products')
+      setData(response.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  useEffect(()=>{
+    fn()
+  },[])
 
   const [input, setInput] = useState({
     id: "",
     name: "",
-    price:"",
+    price: "",
     category: "",
     image: "",
     brand: "",
@@ -26,13 +41,25 @@ const AddProducts = () => {
   };
 
   const handleSaveProduct = async () => {
+   
+    const { id, name, price, category, image, brand } = input;
+    if (!id || !name || !price || !category || !image || !brand) {
+      toast.warning(" Fill the required details.");
+      return; 
+    }
+    else{
     try {
       const response = await axios.post(`http://localhost:3000/products/`, input);
-      setData([...data, response.data]); // Adding the new product to the existing list
+      setData([...data, response.data]); 
+      
+     
     } catch (err) {
       console.log(err);
     }
     navigate('/admin/products')
+    fn()
+    toast.success('Product added')
+  }
   };
 
   return (
@@ -120,7 +147,8 @@ const AddProducts = () => {
           </div>
 
           <div className="flex justify-end space-x-4">
-            <button onClick={()=>navigate('/admin/products')}
+            <button
+              onClick={() => setInput('')}
               className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-200"
             >
               Cancel
@@ -138,7 +166,7 @@ const AddProducts = () => {
         <div className="ml-8 flex-shrink-0">
           <img
             className="w-48 h-48 object-cover rounded-lg border border-gray-300 shadow-md"
-            src={input.image }
+            src={input.image}
             alt="Product"
           />
         </div>
