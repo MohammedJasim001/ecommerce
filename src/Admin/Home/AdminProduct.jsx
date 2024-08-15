@@ -61,9 +61,9 @@ const AdminProduct = () => {
       <ul className="flex items-center justify-around text-lg font-bold bg-gray-200 h-16 rounded-t-lg">
         <li className="px-4 py-2 w-[10%] text-center">ID</li>
         <li className="px-4 py-2 w-[20%] text-center">Name</li>
-        <li className="px-4 py-2 w-[20%] text-center">Image</li>
+        <li  className="hidden md:block px-4 py-2 w-[20%] text-center">Image</li>
         <li className="px-4 py-2 w-[10%] text-center">Price</li>
-        <li className="px-4 py-2 w-[20%] text-center">Category</li>
+        <li className="hidden md:block px-4 py-2 w-[20%] text-center">Category</li>
         <li className="px-4 py-2 w-[20%] text-center">Actions</li>
       </ul>
 
@@ -74,7 +74,7 @@ const AdminProduct = () => {
         >
           <div className="px-4 py-2 w-[10%] text-center">{product.id}</div>
           <div className="px-4 py-2 w-[20%] text-center truncate">{product.name}</div>
-          <div className="px-4 py-2 w-[20%] flex justify-center">
+          <div className="hidden  px-4 py-2 w-[20%] md:flex justify-center">
             <img
               className="w-[80px] h-[80px] object-cover rounded"
               src={product.image}
@@ -84,8 +84,8 @@ const AdminProduct = () => {
           <div className="px-4 py-2 w-[10%] text-center text-gray-800 font-semibold">
             ${product.price}
           </div>
-          <div className="px-4 py-2 w-[20%] text-center">{product.category}</div>
-          <div className="flex space-x-2 px-4 py-2 justify-center w-[20%]">
+          <div className="hidden md:block px-4 py-2 w-[20%] text-center">{product.category}</div>
+          <div className="md:flex space-x-2 px-4 py-2 justify-center w-[20%]">
             <button
               onClick={() => handleEdit(product)}
               className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition duration-300"

@@ -8,7 +8,7 @@ import SearchResults from "./SearchResults";
 
 
 const Navbar = () => {
-  const {data}=useContext(Items)
+  const {data,users}=useContext(Items)
   const [input,setInput]=useState('')
   const [isLogine,setIsLogine] = useState(false)
   function handleLogout(){
@@ -26,11 +26,8 @@ const Navbar = () => {
     
   })
    
-   
-
   function handleChange(e){
-    setInput(e.target.value) 
-    
+    setInput(e.target.value)   
   }
 
 
@@ -79,6 +76,8 @@ const Navbar = () => {
       </Link>
       }     
     </div>
+
+    <div>{}</div>
   </div>
   <div >
     <SearchResults results={results} setInput={setInput}/>
