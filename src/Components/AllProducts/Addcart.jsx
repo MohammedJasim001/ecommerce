@@ -9,10 +9,10 @@ export const AddCarts = async (e) => {
       const cart = res.data.cart;
 
       
-     const al = Object.values(cart).filter((f)=>{
+     const exist = Object.values(cart).filter((f)=>{
              return   f.id==e.id
      })
-     if(al.length!==0){
+     if(exist.length!==0){
         toast.warning('Item already exist cart')
         return
      }

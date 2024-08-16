@@ -25,22 +25,23 @@ const SignIn = () => {
         return e.email === signin.email && e.password === signin.password;
       });
 
-      if (user.admin === true) {
+      if(!user) {
+        toast.warning("Invalid login Details");
+      }
+     else if (user.admin === true) {
         navigate("/admin/users");
         localStorage.setItem("id", user.id);
         window.location.reload();
         toast.success('Login successful')
       } 
     
-       else if (user) {
+      else {
         localStorage.setItem("id", user.id);
         navigate("/");
         window.location.reload();
         toast.success("Login successful");
       } 
-      else {
-        toast.warning("Invalid login Details");
-      }
+     
 
       
     } catch (err) {

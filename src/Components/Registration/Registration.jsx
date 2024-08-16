@@ -13,7 +13,7 @@ const Registration = () => {
     name: '',
     email: '',
     password: '',
-    cpassword: ''
+    cpassword: '',
   });
 
   const [formErrors, setFormErrors] = useState({});

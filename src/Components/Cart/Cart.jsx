@@ -132,7 +132,7 @@ const Cart = () => {
         </div>
         <div>
         
-                <button onClick={()=>navigate('/buynow',{state:{totalPrice,totalItem}})} className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
+                <button onClick={()=>navigate('/buynow',{state:{totalPrice,totalItem,cart}})} className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
                   Buy Now
                 </button>
            

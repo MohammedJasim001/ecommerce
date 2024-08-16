@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-
 import { AddBuy } from "./BuyNowFunctions";
-
 import { toast } from "sonner";
 import { useLocation } from "react-router";
 
 const BuyNow = () => {
   const location = useLocation();
-  const { totalPrice, totalItem } = location.state;
-
+  const { totalPrice, totalItem,cart } = location.state;
+  
   const [formData, setFormData] = useState({
     name: "",
     mobilenumber: "",
@@ -20,7 +18,6 @@ const BuyNow = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [cart, setCart] = useState([]);
   const validate = () => {
     let tempErrors = {};
     let isValid = true;
@@ -42,7 +39,7 @@ const BuyNow = () => {
     }
 
     if (!formData.pincode) {
-      tempErrors.pincode = "Pincod is required.";
+      tempErrors.pincode = "Pincode is required.";
       isValid = false;
     } else if (formData.pincode.length < 6 || formData.pincode.length > 6) {
       tempErrors.pincode = "Pincode is not valid.";
@@ -63,6 +60,7 @@ const BuyNow = () => {
       tempErrors.state = "State is required.";
       isValid = false;
     }
+
     if (!formData.payment) {
       tempErrors.payment = "Please select a payment method";
       isValid = false;
@@ -80,29 +78,19 @@ const BuyNow = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleClick = (productData) => {
     if (validate()) {
-      // Handle form submission, e.g., send data to API
-      console.log("Payment successful!", formData);
-    } else {
-      toast.warning("Please fill the form");
-    }
-  };
-  const handleClick = (e) => {
-    if (validate()) {
-      AddBuy(e);
-    } else {
-      toast.warning("Please fill the form");
-    }
+      AddBuy(productData, formData); 
+    } 
   };
 
   return (
     <div className="flex justify-around">
-      
-
       <form
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleClick(cart);
+        }}
         className="w-[40vw] p-6 bg-white shadow-lg rounded-lg"
       >
         <div className="mb-4">
@@ -252,22 +240,21 @@ const BuyNow = () => {
           )}
         </div>
         <button
-          onClick={() => handleClick(cart)}
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Submit Payment
         </button>
       </form>
-      <div className="flex flex-col items-center ">
-       <div>
-       <span className="font-semibold text-2xl">Total item: </span>
-        <span className="font-bold text-2xl">{totalItem}</span>
-       </div>
-       <div>
-       <span className="font-semibold text-2xl">Total Price:  </span>
-       <span className="font-bold text-2xl">{totalPrice}$</span>
-       </div>
+      <div className="flex flex-col items-center border border-balack h-[20vh] justify-center bg-white shadow-lg w-[25vw]">
+        <div>
+          <span className="font-semibold text-2xl">Total item: </span>
+          <span className="font-bold text-2xl">{totalItem}</span>
+        </div>
+        <div>
+          <span className="font-semibold text-2xl">Total Price: </span>
+          <span className="font-bold text-2xl">{totalPrice.toFixed(2)}$</span>
+        </div>
       </div>
     </div>
   );

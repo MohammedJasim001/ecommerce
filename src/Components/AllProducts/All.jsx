@@ -4,7 +4,7 @@ import AllProuducts from './AllProuducts'
 import { Items } from '../MainPage/Main'
 
 const All = () => {
-  const {data,users} = useContext(Items)
+  const {data} = useContext(Items)
  
   return (
     <div>
