@@ -5,7 +5,7 @@ import { useLocation } from "react-router";
 
 const BuyNow = () => {
   const location = useLocation();
-  const { totalPrice, totalItem,cart } = location.state;
+  const { totalPrice, totalItem, cart } = location.state;
   
   const [formData, setFormData] = useState({
     name: "",
@@ -78,9 +78,9 @@ const BuyNow = () => {
     });
   };
 
-  const handleClick = (productData) => {
+  const handleClick = (productData,totalPrice) => {
     if (validate()) {
-      AddBuy(productData, formData); 
+      AddBuy(productData,totalPrice, formData); 
     } 
   };
 
@@ -89,7 +89,7 @@ const BuyNow = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleClick(cart);
+          handleClick(cart,totalPrice);
         }}
         className="w-[40vw] p-6 bg-white shadow-lg rounded-lg"
       >

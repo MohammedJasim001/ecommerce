@@ -25,7 +25,14 @@ const Users = () => {
       console.log(err);
     }
   };
-
+const handleUnBlock = async(id)=>{
+  try {
+    await axios.patch(`http://localhost:3000/users/${id}`, { blocked: false });
+    fn();
+  } catch (err) {
+    console.log(err);
+  }
+}
   const handleBlock = async (id) => {
     try {
       await axios.patch(`http://localhost:3000/users/${id}`, { blocked: true });
@@ -71,12 +78,21 @@ const Users = () => {
                 >
                   Remove
                 </button>
+
+                {user.blocked  ? 
+                  <button
+                  onClick={() => handleUnBlock(user.id)}
+                  className="bg-black text-white px-2 md:px-3 py-1 rounded hover:bg-yellow-600 transition duration-300"
+                >
+                  Unblock
+                </button> 
+                : 
                 <button
                   onClick={() => handleBlock(user.id)}
                   className="bg-yellow-500 text-white px-2 md:px-3 py-1 rounded hover:bg-yellow-600 transition duration-300"
                 >
-                  Block
-                </button>
+                  Bloclk
+                </button> }
               </>
             ) : (
               <div className="bg-blue-500 text-white py-1 px-3 rounded">Main Admin</div>

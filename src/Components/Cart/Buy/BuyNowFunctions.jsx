@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "sonner";
 
-export const AddBuy = async (productData, formData) => {
+export const AddBuy = async (productData,totalPrice, formData) => {
   const user = localStorage.getItem("id");
   if (user) {
     try {
@@ -9,19 +9,21 @@ export const AddBuy = async (productData, formData) => {
       const orderedProducts = res.data.orderedProducts ;
       const updateBuy = {
         ...orderedProducts,
-      productData
+        productData
+     
         
       };
 
 
-      console.log("sas",productData);
+      console.log(updateBuy);
+      
 
       const updatedUserData = {
-        ...res.data,
-        orderedProducts: updateBuy,
-        orderDetails: formData,
+        
+        orderedProducts:{...orderedProducts, productData, orderDetails:formData, totalPrice:totalPrice} ,
+   
       };
-
+      console.log(updatedUserData);
       toast.success("Order placed");
 
       await axios.patch(`http://localhost:3000/users/${user}`, updatedUserData);

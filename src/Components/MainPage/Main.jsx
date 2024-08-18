@@ -12,6 +12,7 @@ import All from '../AllProducts/All'
 import ProductLists from '../ProductLists/ProductLists'
 import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
+import Orders from '../HomePage/Orders'
 
 
 
@@ -56,6 +57,7 @@ useEffect(()=>{
         <Route path='/allproducts' element={<All/>}/>
         <Route path='/productdetails/:userId' element={<ProductLists/>}/>
         <Route path='/buynow' element={<BuyNow/>}/>
+        <Route path='/orders' element={<Orders/>}/>
        
       </Routes>
      

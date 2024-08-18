@@ -24,7 +24,7 @@ const SignIn = () => {
       const user = users.find((e) => {
         return e.email === signin.email && e.password === signin.password;
       });
-
+      console.log(user);
       if(!user) {
         toast.warning("Invalid login Details");
       }
@@ -34,12 +34,22 @@ const SignIn = () => {
         window.location.reload();
         toast.success('Login successful')
       } 
-    
+     
       else {
-        localStorage.setItem("id", user.id);
-        navigate("/");
-        window.location.reload();
+
+        if(!user.blocked){
+          localStorage.setItem("id", user.id);
+          navigate("/");
+          window.location.reload();
+          
         toast.success("Login successful");
+        }else{
+          alert("You are blocked")
+        }
+       
+      
+        
+    
       } 
      
 
