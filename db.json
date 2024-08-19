@@ -5,7 +5,7 @@
       "name": "Premium Dog Food",
       "category": "dog",
       "brand": "Pedigree",
-      "price": "40.99",
+      "price": "49.99",
       "stock": 150,
       "description": "High-quality dry dog food with natural ingredients.",
       "ratings": 4.7,
@@ -293,14 +293,6 @@
       "description": "Tailored nutrition for adult cats.",
       "ratings": 4.8,
       "image": "https://th.bing.com/th/id/R.11af40d4361782a5f1aa4612f669faf6?rik=nnEGSYRr3CzbsQ&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f1361236-center-1&ehk=UGS9KSRt4boxCjKi9btEJmA3L%2bd9r6MboS2jqt05Qa0%3d&risl=&pid=ImgRaw&r=0"
-    },
-    {
-      "id": "30",
-      "name": "dog wash",
-      "price": "55",
-      "category": "Dog",
-      "image": "https://favim.com/pd/1tb/preview/1/160/1607/16071/1607116.png",
-      "brand": "whishkas"
     }
   ],
   "users": [
@@ -461,6 +453,16 @@
           "description": "Irresistible treats for your cat.",
           "ratings": 4.7,
           "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
+        },
+        "23": {
+          "id": "23",
+          "name": "Acana Heritage Meats Formula",
+          "brand": "Acana",
+          "category": "Dog",
+          "description": "A grain-free dry dog food made with beef, pork, and lamb.",
+          "price": 64.99,
+          "ratings": 4.3,
+          "image": "https://i5.walmartimages.com/asr/9485cecc-83da-4866-bf81-2c23ac15fee7_2.40b79ef04d5e0aaddb5d5768457bbee9.jpeg"
         }
       },
       "blocked": false,
@@ -476,7 +478,7 @@
             "description": "High-quality dry dog food with natural ingredients.",
             "ratings": 4.7,
             "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain",
-            "count": 4
+            "count": 1
           },
           {
             "id": "2",
@@ -488,7 +490,18 @@
             "description": "Organic and grain-free cat food for optimal health.",
             "ratings": 4.5,
             "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
-            "count": 2
+            "count": 1
+          },
+          {
+            "id": "3",
+            "name": "Furminator deShedding Tool",
+            "brand": "Furminator",
+            "category": "Cat",
+            "price": 29.99,
+            "description": "Reduces shedding up to 90% with regular use.",
+            "ratings": 4.7,
+            "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain",
+            "count": 1
           },
           {
             "id": "10",
@@ -499,19 +512,30 @@
             "description": "Irresistible treats for your cat.",
             "ratings": 4.7,
             "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain",
-            "count": 3
+            "count": 1
+          },
+          {
+            "id": "23",
+            "name": "Acana Heritage Meats Formula",
+            "brand": "Acana",
+            "category": "Dog",
+            "description": "A grain-free dry dog food made with beef, pork, and lamb.",
+            "price": 64.99,
+            "ratings": 4.3,
+            "image": "https://i5.walmartimages.com/asr/9485cecc-83da-4866-bf81-2c23ac15fee7_2.40b79ef04d5e0aaddb5d5768457bbee9.jpeg",
+            "count": 1
           }
         ],
         "orderDetails": {
           "name": "hahaha",
           "mobilenumber": "1111111122",
           "pincode": "111111",
-          "address": "ss",
+          "address": "dddd",
           "city": "111",
           "state": "111",
           "payment": "card"
         },
-        "totalPrice": 300.90999999999997
+        "totalPrice": 191.95
       }
     }
   ]

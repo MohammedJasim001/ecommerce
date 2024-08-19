@@ -71,7 +71,7 @@ const AdminProduct = () => {
       {data.map((product) => (
         <div
           key={product.id}
-          onClick={()=>navigate(`/detailsproducts/${product.id}`)}
+
           className="flex items-center justify-around bg-white hover:bg-gray-50 border-b last:border-none py-4 text-sm sm:text-base transition duration-300"
         >
           <div className="px-4 py-2 w-[10%] text-center">{product.id}</div>
@@ -169,6 +169,17 @@ const AdminProduct = () => {
                value={editProduct.brand}
                onChange={(e) => setEditProduct({ ...editProduct, brand: e.target.value })}
              />
+           </div>
+           <div>
+           <label className="block text-sm font-medium text-gray-700">Description</label>
+           <textarea 
+           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            name="" 
+            id=""
+            value={editProduct.description}
+            onChange={(e) => setEditProduct({ ...editProduct, description: e.target.value })}
+            ></textarea>
+            
            </div>
      
            <div className="flex justify-end space-x-4">

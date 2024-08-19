@@ -31,8 +31,9 @@ const Navbar = () => {
   const [isLogine, setIsLogine] = useState(false);
 
   const handleLogout = () => {
-    localStorage.clear("id");
+    localStorage.clear();
     setIsLogine(false);
+
   };
 
   useEffect(() => {

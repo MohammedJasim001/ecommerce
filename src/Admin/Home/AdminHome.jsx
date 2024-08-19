@@ -5,7 +5,7 @@ import Users from "./Users";
 import Dashbord from "./Dashbord";
 import AddProducts from "./AddProducts";
 import { VscThreeBars } from "react-icons/vsc";
-import ProductDetails from "./ProductDetails";
+
 
 const AdminHome = () => {
   const { url } = useParams();
@@ -16,7 +16,7 @@ const AdminHome = () => {
     { title: "Products", url: "products" },
     { title: "Dashboard", url: "dashbord" },
     { title: "Add Products", url: "addproducts" },
-    {url:"detailsproducts/:productId"}
+    
   ];
 
   return (
@@ -70,9 +70,9 @@ const AdminHome = () => {
           <AdminProduct />
         ) : url === "dashbord" ? (
           <Dashbord />
-        ) : url === "addproducts"? (
+        ) : (
           <AddProducts />
-        ) : <ProductDetails/>}
+        ) }
       </div>
     </div>
   );

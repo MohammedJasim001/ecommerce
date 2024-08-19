@@ -30,6 +30,7 @@ const SignIn = () => {
       }
      else if (user.admin === true) {
         navigate("/admin/users");
+        localStorage.setItem("admin",true)
         localStorage.setItem("id", user.id);
         window.location.reload();
         toast.success('Login successful')
@@ -46,14 +47,8 @@ const SignIn = () => {
         }else{
           alert("You are blocked")
         }
-       
-      
-        
-    
-      } 
-     
 
-      
+      }   
     } catch (err) {
       console.log("Error:", err);
     }

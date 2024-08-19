@@ -48,7 +48,6 @@ const handleUnBlock = async(id)=>{
         <li className=" px-2 md:px-4 py-2 w-[10%] md:w-[10%] text-center">ID</li>
         <li className="px-2 md:px-4 py-2 w-[20%] md:w-[20%] text-center">Name</li>
         <li className=" px-2 md:px-4 py-2 w-[30%] text-center">Email</li>
-        <li className="hidden md:block px-2 md:px-4 py-2 w-[20%] text-center">Password</li>
         <li className="px-2 md:px-4 py-2 w-[50%] md:w-[20%] text-center">Actions</li>
       </ul>
 
@@ -65,9 +64,6 @@ const handleUnBlock = async(id)=>{
           </div>
           <div className="px-2 md:px-4 py-2 w-[30%] text-center truncate">
             {user.email}
-          </div>
-          <div className="hidden md:block px-2 md:px-4 py-2 w-[20%] text-center truncate">
-            {user.password}
           </div>
           <div className="flex space-x-2 px-2 md:px-4 py-2 justify-center w-[50%] md:w-[20%]">
             {user.admin !== true ? (
