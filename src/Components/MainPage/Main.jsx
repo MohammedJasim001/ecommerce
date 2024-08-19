@@ -13,6 +13,7 @@ import ProductLists from '../ProductLists/ProductLists'
 import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
 import Orders from '../HomePage/Orders'
+import NonofThis from './NonofThis'
 
 
 
@@ -58,6 +59,7 @@ useEffect(()=>{
         <Route path='/productdetails/:userId' element={<ProductLists/>}/>
         <Route path='/buynow' element={<BuyNow/>}/>
         <Route path='/orders' element={<Orders/>}/>
+        <Route path='*' element={<NonofThis/>}/>
        
       </Routes>
      

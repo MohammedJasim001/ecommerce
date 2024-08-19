@@ -8,7 +8,9 @@ import axios from "axios";
 
 const Navbar = () => {
   const [users, setUsers] = useState([]);
-  
+  const { data } = useContext(Items);
+  const [input, setInput] = useState("");
+  const [isLogine, setIsLogine] = useState(false);
 
   const fetchUserData = async () => {
     const userId = localStorage.getItem("id");
@@ -18,17 +20,14 @@ const Navbar = () => {
     } catch (err) {
       console.log(err);
     }
-  };
-
+  }; 
   useEffect(() => {
     fetchUserData();
   }, [users]);
+ 
 
   const cartCount = users.cart ? Object.keys(users.cart).length : 0;
 
-  const { data } = useContext(Items);
-  const [input, setInput] = useState("");
-  const [isLogine, setIsLogine] = useState(false);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -102,16 +101,23 @@ const Navbar = () => {
           )}
 
           {isLogine ? (
-            <div className="flex items-center">
-              <MdLogout onClick={handleLogout} className="text-3xl text-gray-800 cursor-pointer" />
-              <button className="hidden md:block ml-2">LogOut</button>
+
+            <div className="flex items-center ">
+              <div className="flex items-center">
+                <MdLogout onClick={handleLogout} className="text-3xl text-gray-800 cursor-pointer" />
+                <button className="hidden md:block ml-2">LogOut</button>
+              </div>
+              <div className="ml-2 bg-blue-600 px-1 rounded-lg text-white">{users.name}</div>
             </div>
+           
+            
           ) : (
             <Link to="/signin" className="flex items-center">
               <MdAccountCircle className="text-3xl text-gray-800" />
               <button className="hidden md:block ml-2">LogIn</button>
             </Link>
           )}
+          
         </div>
       </div>
       <div>
