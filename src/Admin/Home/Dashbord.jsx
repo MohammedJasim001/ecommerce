@@ -1,44 +1,52 @@
-import React, { useContext } from 'react'
-import { Products } from '../AdminMain/AdminMain'
+import React, { useContext } from 'react';
+import { Products } from '../AdminMain/AdminMain';
 
 const Dashbord = () => {
+  const { data, users } = useContext(Products);
 
-  const {data,users} = useContext(Products)
+  
+  const totalOrders = users.reduce((acc, user) => {
+    if (user.orderedProducts && user.orderedProducts.productData.length > 0) {
+      return acc + 1; 
+    }
+    return acc;
+  }, 0);
 
-  const totalUsers= users.filter((ele)=>ele.admin!==true).length
+
+ console.log(users.map((acc)=>acc.orderedProducts&&acc.orderedProducts.productData).length+1,'ajkld');
+  
+  console.log(totalOrders);
+
   
   
+  
+
+  const totalUsers = users.filter((ele) => ele.admin !== true).length;
+
   return (
     <div>
       <main className="flex-1 p-6">
-        
-          <h1 className="text-2xl font-semibold text-gray-700">Lunas Pets</h1>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h1 className="text-2xl font-semibold text-gray-700">Lunas Pets</h1>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold text-gray-800">Total Products</h2>
-          
+            <h2 className="text-xl font-semibold text-gray-800">Total Products</h2>
             <p className="text-gray-600 mt-2">{data.length}</p>
-          
-            
-              
-            </div>
-
-            
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">Total Orders</h2>
-              <p className="text-gray-600 mt-2">{}</p>
-            </div>
-
-           
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold text-gray-800">Total Customers</h2>
-              <p className="text-gray-600 mt-2">{totalUsers}</p>
-            </div>
           </div>
-        </main>
-    </div>
-  )
-}
 
-export default Dashbord
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold text-gray-800">Total Orders</h2>
+            <p className="text-gray-600 mt-2">{totalOrders}</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold text-gray-800">Total Customers</h2>
+            <p className="text-gray-600 mt-2">{totalUsers}</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Dashbord;

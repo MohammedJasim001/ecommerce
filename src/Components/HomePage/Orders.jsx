@@ -11,7 +11,7 @@ const OrdersPage = () => {
       if (userId) {
         try {
           const response = await axios.get(`http://localhost:3000/users/${userId}`);
-          setOrders(response.data.orderedProducts); // Update this to point directly to orderedProducts
+          setOrders(response.data.orderedProducts); 
         } catch (err) {
           console.error(err);
           toast.error("Failed to fetch orders.");

@@ -82,7 +82,7 @@ const handleUnBlock = async(id)=>{
                 {user.blocked  ? 
                   <button
                   onClick={() => handleUnBlock(user.id)}
-                  className="bg-black text-white px-2 md:px-3 py-1 rounded hover:bg-yellow-600 transition duration-300"
+                  className="bg-black text-white px-2 md:px-3 py-1 rounded hover:bg-gray-800 transition duration-300"
                 >
                   Unblock
                 </button> 
@@ -91,7 +91,7 @@ const handleUnBlock = async(id)=>{
                   onClick={() => handleBlock(user.id)}
                   className="bg-yellow-500 text-white px-2 md:px-3 py-1 rounded hover:bg-yellow-600 transition duration-300"
                 >
-                  Bloclk
+                  Block
                 </button> }
               </>
             ) : (
