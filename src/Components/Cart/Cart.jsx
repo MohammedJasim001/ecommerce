@@ -7,6 +7,7 @@ import { toast } from "sonner";
 const Cart = () => {
   const [cart, setCart] = useState([]);
    const navigate =useNavigate()
+   
 
   const clickIncrease = (id) => {
     setCart((prevCart) =>
@@ -48,6 +49,8 @@ const Cart = () => {
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price * item.count, 0);
   const totalItem=cart.reduce((acc,item)=>acc+item.count,0)
+
+  
 
   return (
     <div className="min-h-screen">
@@ -135,6 +138,9 @@ const Cart = () => {
                 <button onClick={()=>navigate('/buynow',{state:{totalPrice,totalItem,cart}})} className="p-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg m-auto ">
                   Buy Now
                 </button>
+
+                
+                
            
         </div>
       </div>

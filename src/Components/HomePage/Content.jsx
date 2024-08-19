@@ -10,7 +10,7 @@ import Products from './Pages/Products';
 import { Items } from '../MainPage/Main';
 
 const Content = () => {
-    const {data,users} = useContext(Items)
+    const {data} = useContext(Items)
    
 
     return (

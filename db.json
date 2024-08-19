@@ -5,7 +5,7 @@
       "name": "Premium Dog Food",
       "category": "dog",
       "brand": "Pedigree",
-      "price": 49.99,
+      "price": "40.99",
       "stock": 150,
       "description": "High-quality dry dog food with natural ingredients.",
       "ratings": 4.7,
@@ -293,6 +293,14 @@
       "description": "Tailored nutrition for adult cats.",
       "ratings": 4.8,
       "image": "https://th.bing.com/th/id/R.11af40d4361782a5f1aa4612f669faf6?rik=nnEGSYRr3CzbsQ&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f1361236-center-1&ehk=UGS9KSRt4boxCjKi9btEJmA3L%2bd9r6MboS2jqt05Qa0%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": "30",
+      "name": "dog wash",
+      "price": "55",
+      "category": "Dog",
+      "image": "https://favim.com/pd/1tb/preview/1/160/1607/16071/1607116.png",
+      "brand": "whishkas"
     }
   ],
   "users": [
@@ -322,16 +330,6 @@
           "description": "Organic and grain-free cat food for optimal health.",
           "ratings": 4.5,
           "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        },
-        "3": {
-          "id": "3",
-          "name": "Furminator deShedding Tool",
-          "brand": "Furminator",
-          "category": "Cat",
-          "price": 29.99,
-          "description": "Reduces shedding up to 90% with regular use.",
-          "ratings": 4.7,
-          "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
         },
         "6": {
           "id": "6",
@@ -422,39 +420,99 @@
       "password": "1111",
       "cpassword": "1111",
       "cart": {
-        "5": {
-          "id": "5",
-          "name": "Dog Bed",
-          "category": "Dog",
-          "brand": "Comfy Canine",
-          "price": 59.99,
-          "stock": 40,
-          "description": "Orthopedic dog bed with memory foam.",
-          "ratings": 4.8,
-          "image": "https://i5.walmartimages.com/asr/f3142e66-9ca4-49db-a229-87a09f284f22_2.4c65b46849a5e3c2540824bacc75bb48.jpeg"
+        "1": {
+          "id": "1",
+          "name": "Premium Dog Food",
+          "category": "dog",
+          "brand": "Pedigree",
+          "price": 49.99,
+          "stock": 150,
+          "description": "High-quality dry dog food with natural ingredients.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
         },
-        "6": {
-          "id": "6",
-          "name": "PetSafe Easy Walk Harness",
-          "brand": "PetSafe",
-          "category": "Dog",
-          "price": 26.99,
-          "description": "No-pull harness for easier walks.",
-          "ratings": 4.4,
-          "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0"
+        "2": {
+          "id": "2",
+          "name": "Organic Cat Food",
+          "category": "Cat",
+          "brand": "Meow Mix",
+          "price": 39.99,
+          "stock": 200,
+          "description": "Organic and grain-free cat food for optimal health.",
+          "ratings": 4.5,
+          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
         },
-        "7": {
-          "id": "7",
-          "name": "Whiskas Dry Cat Food",
+        "3": {
+          "id": "3",
+          "name": "Furminator deShedding Tool",
+          "brand": "Furminator",
+          "category": "Cat",
+          "price": 29.99,
+          "description": "Reduces shedding up to 90% with regular use.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
+        },
+        "10": {
+          "id": "10",
+          "name": "Whiskas Temptations Treats",
           "brand": "Whiskas",
           "category": "Cat",
-          "price": 18.99,
-          "description": "Delicious dry cat food for everyday nutrition.",
-          "ratings": 4.8,
-          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+          "price": 6.99,
+          "description": "Irresistible treats for your cat.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
         }
       },
-      "blocked": false
+      "blocked": false,
+      "orderedProducts": {
+        "productData": [
+          {
+            "id": "1",
+            "name": "Premium Dog Food",
+            "category": "dog",
+            "brand": "Pedigree",
+            "price": 49.99,
+            "stock": 150,
+            "description": "High-quality dry dog food with natural ingredients.",
+            "ratings": 4.7,
+            "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain",
+            "count": 4
+          },
+          {
+            "id": "2",
+            "name": "Organic Cat Food",
+            "category": "Cat",
+            "brand": "Meow Mix",
+            "price": 39.99,
+            "stock": 200,
+            "description": "Organic and grain-free cat food for optimal health.",
+            "ratings": 4.5,
+            "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
+            "count": 2
+          },
+          {
+            "id": "10",
+            "name": "Whiskas Temptations Treats",
+            "brand": "Whiskas",
+            "category": "Cat",
+            "price": 6.99,
+            "description": "Irresistible treats for your cat.",
+            "ratings": 4.7,
+            "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain",
+            "count": 3
+          }
+        ],
+        "orderDetails": {
+          "name": "hahaha",
+          "mobilenumber": "1111111122",
+          "pincode": "111111",
+          "address": "ss",
+          "city": "111",
+          "state": "111",
+          "payment": "card"
+        },
+        "totalPrice": 300.90999999999997
+      }
     }
   ]
 }

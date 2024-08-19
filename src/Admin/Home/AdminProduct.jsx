@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import {  useNavigate } from "react-router";
 
 
 const AdminProduct = () => {
 
+  const navigate=useNavigate()
   const [data,setData]=useState([])
 
   const fn=async()=>{
@@ -61,14 +63,15 @@ const AdminProduct = () => {
         <li className="px-4 py-2 w-[10%] text-center">ID</li>
         <li className="px-4 py-2 w-[20%] text-center">Name</li>
         <li  className="hidden md:block px-4 py-2 w-[20%] text-center">Image</li>
-        <li className="px-4 py-2 w-[10%] text-center">Price</li>
-        <li className="hidden md:block px-4 py-2 w-[20%] text-center">Category</li>
+        {/* <li className="px-4 py-2 w-[10%] text-center">Price</li> */}
+        {/* <li className="hidden md:block px-4 py-2 w-[20%] text-center">Category</li> */}
         <li className="px-4 py-2 w-[20%] text-center">Actions</li>
       </ul>
 
       {data.map((product) => (
         <div
           key={product.id}
+          onClick={()=>navigate(`/detailsproducts/${product.id}`)}
           className="flex items-center justify-around bg-white hover:bg-gray-50 border-b last:border-none py-4 text-sm sm:text-base transition duration-300"
         >
           <div className="px-4 py-2 w-[10%] text-center">{product.id}</div>
@@ -80,10 +83,10 @@ const AdminProduct = () => {
               alt={product.name}
             />
           </div>
-          <div className="px-4 py-2 w-[10%] text-center text-gray-800 font-semibold">
+          {/* <div className="px-4 py-2 w-[10%] text-center text-gray-800 font-semibold">
             ${product.price}
           </div>
-          <div className="hidden md:block px-4 py-2 w-[20%] text-center">{product.category}</div>
+          <div className="hidden md:block px-4 py-2 w-[20%] text-center">{product.category}</div> */}
           <div className="md:flex space-x-2 px-4 py-2 justify-center w-[20%]">
             <button
               onClick={() => handleEdit(product)}

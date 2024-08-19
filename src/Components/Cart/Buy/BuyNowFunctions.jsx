@@ -9,12 +9,8 @@ export const AddBuy = async (productData,totalPrice, formData) => {
       const orderedProducts = res.data.orderedProducts ;
       const updateBuy = {
         ...orderedProducts,
-        productData
-     
-        
+        productData     
       };
-
-
       console.log(updateBuy);
       
 
