@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { AddBuy } from "./BuyNowFunctions";
 import { toast } from "sonner";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import Footer from "../../HomePage/Footer";
 import Navbar from "../../HomePage/Navbar";
 
 const BuyNow = () => {
+  const navigate=useNavigate()
   const location = useLocation();
   const { totalPrice, totalItem, cart } = location.state;
   
@@ -83,7 +84,7 @@ const BuyNow = () => {
   const handleClick = (productData,totalPrice) => {
     if (validate()) {
       AddBuy(productData,totalPrice, formData); 
-     
+     navigate('/')
     } 
   };
 

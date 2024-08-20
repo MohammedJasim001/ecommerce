@@ -458,37 +458,17 @@
       "orderedProducts": {
         "productData": [
           {
-            "id": "1",
-            "name": "Premium Dog Food",
-            "category": "dog",
-            "brand": "Pedigree",
-            "price": "49.99",
-            "stock": 150,
-            "description": "High-quality dry dog food with natural ingredients.",
-            "ratings": 4.7,
-            "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain",
-            "count": 1
-          },
-          {
-            "id": "3",
-            "name": "Furminator deShedding Tool",
-            "brand": "Furminator",
+            "id": "2",
+            "name": "Organic Cat Food",
             "category": "Cat",
-            "price": 29.99,
-            "description": "Reduces shedding up to 90% with regular use.",
-            "ratings": 4.7,
-            "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain",
-            "count": 1
-          },
-          {
-            "id": "23",
-            "name": "Acana Heritage Meats Formula",
-            "brand": "Acana",
-            "category": "Dog",
-            "description": "A grain-free dry dog food made with beef, pork, and lamb.",
-            "price": 64.99,
-            "ratings": 4.3,
-            "image": "https://i5.walmartimages.com/asr/9485cecc-83da-4866-bf81-2c23ac15fee7_2.40b79ef04d5e0aaddb5d5768457bbee9.jpeg",
+            "brand": "Meow Mix",
+            "item": "Cat Food",
+            "qty": "1 kg",
+            "price": 39.99,
+            "stock": 200,
+            "description": "Organic and grain-free cat food for optimal health.",
+            "ratings": "4.5",
+            "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
             "count": 1
           }
         ],
@@ -496,12 +476,76 @@
           "name": "hahaha",
           "mobilenumber": "1111111122",
           "pincode": "111111",
-          "address": "dsad",
+          "address": "ddd",
           "city": "111",
           "state": "111",
-          "payment": "card"
+          "payment": "upi"
         },
-        "totalPrice": 144.97
+        "totalPrice": 39.99
+      }
+    },
+    {
+      "id": "1c36",
+      "name": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "1212",
+      "cpassword": "1212",
+      "cart": "",
+      "orderedProducts": {
+        "0": {
+          "productData": [
+            {
+              "id": "1",
+              "name": "Premium Dog Food",
+              "category": "dog",
+              "brand": "Pedigree",
+              "item": "Dog Food",
+              "qty": "1 kg",
+              "price": "49.99",
+              "stock": 150,
+              "description": "High-quality dry dog food with natural ingredients.",
+              "ratings": 4.7,
+              "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "dfghj",
+            "city": "111",
+            "state": "111",
+            "payment": "upi"
+          },
+          "totalPrice": 49.99
+        },
+        "order_1724152759126": {
+          "productData": [
+            {
+              "id": "8",
+              "name": "Catit Flower Fountain",
+              "brand": "Catit",
+              "category": " Cat",
+              "item": "Cat Accessories",
+              "price": 29.99,
+              "description": "Fun and functional water fountain for cats.",
+              "ratings": 4.3,
+              "image": "https://th.bing.com/th/id/R.5377ab729892f331f503f716cb40dbd9?rik=op49Fv7jX7Bj8w&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2506822-center-1&ehk=PtaeHixtr%2beVcjX2AoAjx1ffGWxrMewuShfHr6pP2WI%3d&risl=&pid=ImgRaw&r=0",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "dfghj",
+            "city": "111",
+            "state": "111",
+            "payment": "cod"
+          },
+          "totalPrice": 29.99
+        }
       }
     }
   ]

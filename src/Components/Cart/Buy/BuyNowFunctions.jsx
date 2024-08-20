@@ -1,32 +1,42 @@
 import axios from "axios";
 import { toast } from "sonner";
 
-export const AddBuy = async (productData,totalPrice, formData) => {
+export const AddBuy = async (productData, totalPrice, formData) => {
   const user = localStorage.getItem("id");
   if (user) {
     try {
       const res = await axios.get(`http://localhost:3000/users/${user}`);
-      const orderedProducts = res.data.orderedProducts ;
-      const updateBuy = {
-        ...orderedProducts,
-        productData     
-      };
-      console.log(updateBuy);
       
+      
+      let orderedProducts = res.data.orderedProducts;
+      if (typeof orderedProducts !== 'object' || orderedProducts === null) {
+        orderedProducts = {};
+      }
+
+      
+      const orderKey = `order_${Date.now()}`; 
+      
+      // Add the new order to the object
+      const updatedOrderedProducts = {
+        ...orderedProducts,
+        [orderKey]: { productData, orderDetails: formData, totalPrice }
+      };
 
       const updatedUserData = {
-        
-        orderedProducts:{...orderedProducts, productData, orderDetails:formData, totalPrice:totalPrice} ,
-   
+        orderedProducts: updatedOrderedProducts
       };
+
       console.log(updatedUserData);
       toast.success("Order placed");
 
+      // Update the user's ordered products
       await axios.patch(`http://localhost:3000/users/${user}`, updatedUserData);
+
+      // Clear the cart after order placement
       await axios.patch(`http://localhost:3000/users/${user}`, {
-        cart:"",
+        cart: "",
       });
-      
+
     } catch (err) {
       console.log(err);
       toast.error("Something went wrong!");
