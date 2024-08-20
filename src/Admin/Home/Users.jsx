@@ -23,53 +23,71 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
             {user.blocked ? "Yes" : "No"}
           </div>
         </div>
-        <div className="bg-[#3b82f6] p-2 mt-2 rounded-lg">
-          <h3 className="mt-4 text-lg font-bold">Ordered Products</h3>
-          {user.orderedProducts?.productData.map((product) => (
-            <div key={product.id} className="mt-2 bg-[#10b981] p-2 rounded-lg">
-              <div>
-                <span className="font-bold">Product Name:</span> {product.name}
+
+        {user.orderedProducts && Object.keys(user.orderedProducts).length > 0 ? (
+          Object.keys(user.orderedProducts).map((orderKey, index) => {
+            const order = user.orderedProducts[orderKey];
+            return (
+              <div key={orderKey} className="bg-[#3b82f6] p-2 mt-4 rounded-lg">
+                <h3 className="text-lg font-bold">
+                  Order {index + 1}
+                </h3>
+
+                <div className="mt-2 bg-[#10b981] p-2 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-2">Ordered Products</h4>
+                  {order.productData.map((product) => (
+                    <div key={product.id} className="mb-2">
+                      <div>
+                        <span className="font-bold">Product Name:</span> {product.name}
+                      </div>
+                      <div>
+                        <span className="font-bold">Category:</span> {product.category}
+                      </div>
+                      <div>
+                        <span className="font-bold">Price:</span> ${product.price}
+                      </div>
+                      <div>
+                        <span className="font-bold">Quantity:</span> {product.qty}
+                      </div>
+                      <div>
+                        <span className="font-bold">Count:</span> {product.count}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-2 bg-[#10b981] p-2 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-2">Order Details</h4>
+                  <div>
+                    <span className="font-bold">Recipient Name:</span>{" "}
+                    {order.orderDetails.name}
+                  </div>
+                  <div>
+                    <span className="font-bold">Mobile Number:</span>{" "}
+                    {order.orderDetails.mobilenumber}
+                  </div>
+                  <div>
+                    <span className="font-bold">Address:</span>{" "}
+                    {order.orderDetails.address}, {order.orderDetails.city},{" "}
+                    {order.orderDetails.state}
+                  </div>
+                  <div>
+                    <span className="font-bold">Payment Method:</span>{" "}
+                    {order.orderDetails.payment}
+                  </div>
+                  <div>
+                    <span className="font-bold">Total Price:</span> ${order.totalPrice}
+                  </div>
+                </div>
               </div>
-              <div>
-                <span className="font-bold">Category:</span> {product.category}
-              </div>
-              <div>
-                <span className="font-bold">Price:</span> ${product.price}
-              </div>
-              <div>
-                <span className="font-bold">Quantity:</span> {product.qty}
-              </div>
-              <div>
-                <span className="font-bold">Count</span> {product.count}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="bg-[#3b82f6] p-2 mt-2 rounded-lg">
-          <h3 className="mt-4 text-lg font-bold">Order Details</h3>
-          <div>
-            <span className="font-bold">Recipient Name:</span>{" "}
-            {user.orderedProducts?.orderDetails?.name}
+            );
+          })
+        ) : (
+          <div className="bg-red-500 p-2 mt-4 rounded-lg">
+            <p>No orders found for this user.</p>
           </div>
-          <div>
-            <span className="font-bold">Mobile Number:</span>{" "}
-            {user.orderedProducts?.orderDetails?.mobilenumber}
-          </div>
-          <div>
-            <span className="font-bold">Address:</span>{" "}
-            {user.orderedProducts?.orderDetails?.address},{" "}
-            {user.orderedProducts?.orderDetails?.city},{" "}
-            {user.orderedProducts?.orderDetails?.state}
-          </div>
-          <div>
-            <span className="font-bold">Payment Method:</span>{" "}
-            {user.orderedProducts?.orderDetails?.payment}
-          </div>
-          <div>
-            <span className="font-bold">Total Price:</span> $
-            {user.orderedProducts?.totalPrice}
-          </div>
-        </div>
+        )}
+
         <button
           onClick={onClose}
           className="mt-6 bg-blue-500 text-white px-4 py-2 rounded"

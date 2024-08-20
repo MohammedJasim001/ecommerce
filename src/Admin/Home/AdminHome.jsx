@@ -70,9 +70,10 @@ const AdminHome = () => {
           <AdminProduct />
         ) : url === "dashbord" ? (
           <Dashbord />
-        ) : (
+        ) : url==="addproducts" ? (
           <AddProducts />
-        ) }
+        ): <div>404 error....</div>
+         }
       </div>
     </div>
   );

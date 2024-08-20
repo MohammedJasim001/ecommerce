@@ -16,7 +16,7 @@ export const AddBuy = async (productData, totalPrice, formData) => {
       
       const orderKey = `order_${Date.now()}`; 
       
-      // Add the new order to the object
+     
       const updatedOrderedProducts = {
         ...orderedProducts,
         [orderKey]: { productData, orderDetails: formData, totalPrice }

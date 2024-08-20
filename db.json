@@ -343,108 +343,68 @@
       "email": "ab@gmail.com",
       "password": "1234",
       "cpassword": "1234",
-      "cart": {
-        "2": {
-          "id": "2",
-          "name": "Organic Cat Food",
-          "category": "Cat",
-          "brand": "Meow Mix",
-          "price": 39.99,
-          "stock": 200,
-          "description": "Organic and grain-free cat food for optimal health.",
-          "ratings": 4.5,
-          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        },
-        "4": {
-          "id": "4",
-          "name": "Purina Pro Plan Savor Adult",
-          "brand": "Purina Pro Plan",
-          "category": "Dog",
-          "description": "Dry dog food with a blend of crunchy kibble and tender meaty pieces.",
-          "ratings": 4.5,
-          "price": 47.99,
-          "image": "https://images.north40.com/images/48206/BA_purina_pro_plan_savor_adult_shredded_blend_beef_and_rice_formula_dry_dog_food_35lb_48206.jpg?width=900&height=900"
-        },
-        "6": {
-          "id": "6",
-          "name": "PetSafe Easy Walk Harness",
-          "brand": "PetSafe",
-          "category": "Dog",
-          "price": 26.99,
-          "description": "No-pull harness for easier walks.",
-          "ratings": 4.4,
-          "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0"
-        },
-        "10": {
-          "id": "10",
-          "name": "Whiskas Temptations Treats",
-          "brand": "Whiskas",
-          "category": "Cat",
-          "price": 6.99,
-          "description": "Irresistible treats for your cat.",
-          "ratings": 4.7,
-          "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
-        }
-      },
+      "cart": "",
       "blocked": false,
       "orderedProducts": {
-        "productData": [
-          {
-            "id": "2",
-            "name": "Organic Cat Food",
-            "category": "Cat",
-            "brand": "Meow Mix",
-            "price": 39.99,
-            "stock": 200,
-            "description": "Organic and grain-free cat food for optimal health.",
-            "ratings": 4.5,
-            "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
-            "count": 1
+        "order_1724154733434": {
+          "productData": [
+            {
+              "id": "2",
+              "name": "Organic Cat Food",
+              "category": "Cat",
+              "brand": "Meow Mix",
+              "price": 39.99,
+              "stock": 200,
+              "description": "Organic and grain-free cat food for optimal health.",
+              "ratings": 4.5,
+              "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
+              "count": 1
+            },
+            {
+              "id": "4",
+              "name": "Purina Pro Plan Savor Adult",
+              "brand": "Purina Pro Plan",
+              "category": "Dog",
+              "description": "Dry dog food with a blend of crunchy kibble and tender meaty pieces.",
+              "ratings": 4.5,
+              "price": 47.99,
+              "image": "https://images.north40.com/images/48206/BA_purina_pro_plan_savor_adult_shredded_blend_beef_and_rice_formula_dry_dog_food_35lb_48206.jpg?width=900&height=900",
+              "count": 1
+            },
+            {
+              "id": "6",
+              "name": "PetSafe Easy Walk Harness",
+              "brand": "PetSafe",
+              "category": "Dog",
+              "price": 26.99,
+              "description": "No-pull harness for easier walks.",
+              "ratings": 4.4,
+              "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0",
+              "count": 1
+            },
+            {
+              "id": "10",
+              "name": "Whiskas Temptations Treats",
+              "brand": "Whiskas",
+              "category": "Cat",
+              "price": 6.99,
+              "description": "Irresistible treats for your cat.",
+              "ratings": 4.7,
+              "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "fgjkm",
+            "city": "111",
+            "state": "111",
+            "payment": "card"
           },
-          {
-            "id": "3",
-            "name": "Furminator deShedding Tool",
-            "brand": "Furminator",
-            "category": "Cat",
-            "price": 29.99,
-            "description": "Reduces shedding up to 90% with regular use.",
-            "ratings": 4.7,
-            "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain",
-            "count": 8
-          },
-          {
-            "id": "6",
-            "name": "PetSafe Easy Walk Harness",
-            "brand": "PetSafe",
-            "category": "Dog",
-            "price": 26.99,
-            "description": "No-pull harness for easier walks.",
-            "ratings": 4.4,
-            "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0",
-            "count": 1
-          },
-          {
-            "id": "10",
-            "name": "Whiskas Temptations Treats",
-            "brand": "Whiskas",
-            "category": "Cat",
-            "price": 6.99,
-            "description": "Irresistible treats for your cat.",
-            "ratings": 4.7,
-            "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain",
-            "count": 1
-          }
-        ],
-        "orderDetails": {
-          "name": "hahaha",
-          "mobilenumber": "1111111122",
-          "pincode": "111111",
-          "address": "ddd",
-          "city": "111",
-          "state": "111",
-          "payment": "cod"
-        },
-        "totalPrice": 313.89
+          "totalPrice": 121.96
+        }
       }
     },
     {
@@ -456,32 +416,34 @@
       "cart": "",
       "blocked": false,
       "orderedProducts": {
-        "productData": [
-          {
-            "id": "2",
-            "name": "Organic Cat Food",
-            "category": "Cat",
-            "brand": "Meow Mix",
-            "item": "Cat Food",
-            "qty": "1 kg",
-            "price": 39.99,
-            "stock": 200,
-            "description": "Organic and grain-free cat food for optimal health.",
-            "ratings": "4.5",
-            "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
-            "count": 1
-          }
-        ],
-        "orderDetails": {
-          "name": "hahaha",
-          "mobilenumber": "1111111122",
-          "pincode": "111111",
-          "address": "ddd",
-          "city": "111",
-          "state": "111",
-          "payment": "upi"
-        },
-        "totalPrice": 39.99
+        "order_1724154559219": {
+          "productData": [
+            {
+              "id": "2",
+              "name": "Organic Cat Food",
+              "category": "Cat",
+              "brand": "Meow Mix",
+              "item": "Cat Food",
+              "qty": "1 kg",
+              "price": 39.99,
+              "stock": 200,
+              "description": "Organic and grain-free cat food for optimal health.",
+              "ratings": "4.5",
+              "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "fghbjn",
+            "city": "111",
+            "state": "111",
+            "payment": "upi"
+          },
+          "totalPrice": 39.99
+        }
       }
     },
     {
@@ -545,6 +507,34 @@
             "payment": "cod"
           },
           "totalPrice": 29.99
+        },
+        "order_1724153562239": {
+          "productData": [
+            {
+              "id": "1",
+              "name": "Premium Dog Food",
+              "category": "dog",
+              "brand": "Pedigree",
+              "item": "Dog Food",
+              "qty": "1 kg",
+              "price": "49.99",
+              "stock": 150,
+              "description": "High-quality dry dog food with natural ingredients.",
+              "ratings": 4.7,
+              "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "ggfg",
+            "city": "111",
+            "state": "111",
+            "payment": "cod"
+          },
+          "totalPrice": 49.99
         }
       }
     }
