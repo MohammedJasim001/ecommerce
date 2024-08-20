@@ -17,14 +17,7 @@ const Users = () => {
     fn();
   }, []);
 
-  const handleRemove = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3000/users/${id}`);
-      fn();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+ 
 const handleUnBlock = async(id)=>{
   try {
     await axios.patch(`http://localhost:3000/users/${id}`, { blocked: false });
@@ -68,12 +61,6 @@ const handleUnBlock = async(id)=>{
           <div className="flex space-x-2 px-2 md:px-4 py-2 justify-center w-[50%] md:w-[20%]">
             {user.admin !== true ? (
               <>
-                <button
-                  onClick={() => handleRemove(user.id)}
-                  className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600 transition duration-300"
-                >
-                  Remove
-                </button>
 
                 {user.blocked  ? 
                   <button

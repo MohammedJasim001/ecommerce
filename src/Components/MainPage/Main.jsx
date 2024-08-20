@@ -6,8 +6,6 @@ import SignIn from '../Registration/SignIn'
 import Cart from '../Cart/Cart'
 import Cat from '../ProductsCat/Cat'
 import Dog from '../ProductsDog/Dog'
-import Navbar from '../HomePage/Navbar'
-import Footer from '../HomePage/Footer'
 import All from '../AllProducts/All'
 import ProductLists from '../ProductLists/ProductLists'
 import axios from 'axios'
@@ -42,11 +40,14 @@ useEffect(()=>{
     .catch(err=>console.log(err))
 },[])
 
+
+
+
   return (
     <div className='bg-slate-100'>
        
       <Items.Provider value={{data, setData,users,setUsers}}>
-      <Navbar/>
+      
       <Routes>
       
         <Route path='/' element={<Home/>}/>
@@ -60,10 +61,11 @@ useEffect(()=>{
         <Route path='/buynow' element={<BuyNow/>}/>
         <Route path='/orders' element={<Orders/>}/>
         <Route path='*' element={<NonofThis/>}/>
+          
+        
        
       </Routes>
      
-      <Footer/>
       </Items.Provider>
    
    

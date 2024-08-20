@@ -8,6 +8,8 @@ import bgimage from '../Assets/bgpet.png';
 import both from '../Assets/cat&dog.jpg';
 import Products from './Pages/Products';
 import { Items } from '../MainPage/Main';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Content = () => {
     const {data} = useContext(Items)
@@ -15,6 +17,7 @@ const Content = () => {
 
     return (
         <div>
+        <Navbar/>
             
             <div className="flex flex-col md:flex-row bg-[#f97316]">
                 <img className="w-full md:w-1/2" src={bgimage} alt="Background" />
@@ -64,6 +67,7 @@ const Content = () => {
                     ))}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { RemovCart } from "../AllProducts/Addcart";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import Navbar from "../HomePage/Navbar";
+import Footer from "../HomePage/Footer";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -53,7 +55,9 @@ const Cart = () => {
   
 
   return (
-    <div className="min-h-screen">
+   <div>
+    <Navbar/>
+     <div className="min-h-screen mt-5">
       {cart.length!==0?
         <div className="md:flex ">
       <div className="md:w-[70%] grid md:grid-cols-2 gap-3">
@@ -148,6 +152,8 @@ const Cart = () => {
     :
       <div className="text-xl font-bold  py-[50px]">Your Cart is empty!</div>}
     </div>
+    <Footer/>
+   </div>
   
   );
 };

@@ -62,7 +62,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="h-[100vh] flex flex-col items-center justify-center bg-red-100 absolute top-0 w-[100%] bottom-0">
+    <div className="h-[100vh] flex flex-col items-center justify-center bg-red-100">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center rounded-md md:shadow-2xl h-[300px] w-[500px] bg-white"

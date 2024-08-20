@@ -21,7 +21,7 @@ const ProductsCat = ({ products }) => {
           <h1 className=" font-bold tracking-tight text-gray-900">
             {products.name}
           </h1>
-          <h1 className="bg-green-700 w-10 rounded-md px-2">{products.ratings}*</h1>
+          <span className="text-green-600 font-bold ml-2">{products.ratings} ★</span>
           <h4 className="text-gray-900 text-lg font-semibold">
             ${products.price}
           </h4>

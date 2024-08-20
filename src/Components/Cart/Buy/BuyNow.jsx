@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { AddBuy } from "./BuyNowFunctions";
 import { toast } from "sonner";
 import { useLocation } from "react-router";
+import Footer from "../../HomePage/Footer";
+import Navbar from "../../HomePage/Navbar";
 
 const BuyNow = () => {
   const location = useLocation();
@@ -81,11 +83,14 @@ const BuyNow = () => {
   const handleClick = (productData,totalPrice) => {
     if (validate()) {
       AddBuy(productData,totalPrice, formData); 
+     
     } 
   };
 
   return (
-    <div className="flex justify-around">
+   <div>
+    <Navbar/>
+     <div className="flex justify-around mt-5">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -257,6 +262,8 @@ const BuyNow = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+   </div>
   );
 };
 

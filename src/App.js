@@ -25,6 +25,7 @@ function App() {
 <Toaster richColors position='bottom-right'/>
 {adm &&
     <AdminMain/> }
+    
       <Main/>
      
      

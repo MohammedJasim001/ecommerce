@@ -23,6 +23,10 @@ export const AddBuy = async (productData,totalPrice, formData) => {
       toast.success("Order placed");
 
       await axios.patch(`http://localhost:3000/users/${user}`, updatedUserData);
+      await axios.patch(`http://localhost:3000/users/${user}`, {
+        cart:"",
+      });
+      
     } catch (err) {
       console.log(err);
       toast.error("Something went wrong!");

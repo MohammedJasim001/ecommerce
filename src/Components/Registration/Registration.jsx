@@ -86,7 +86,7 @@ const Registration = () => {
   };
 
   return (
-    <div className='bg-red-100 h-[100vh] flex items-center justify-center absolute top-0 w-[100%] bottom-0'>
+    <div className='bg-red-100 h-[100vh] flex items-center justify-center  '>
       <form onSubmit={handleSubmit}
         className='flex flex-col items-center w-[450px] h-[450px] justify-center rounded-md md:shadow-2xl bg-white'>
         <input className='border border-black h-12 w-[300px] rounded-md'

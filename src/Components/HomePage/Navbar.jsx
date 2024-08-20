@@ -23,7 +23,7 @@ const Navbar = () => {
   }; 
   useEffect(() => {
     fetchUserData();
-  }, [users]);
+  }, []);
  
 
   const cartCount = users.cart ? Object.keys(users.cart).length : 0;
