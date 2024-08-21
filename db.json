@@ -413,7 +413,21 @@
       "email": "salman@gmail.com",
       "password": "1111",
       "cpassword": "1111",
-      "cart": "",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "Organic Cat Food",
+          "category": "Cat",
+          "brand": "Meow Mix",
+          "item": "Cat Food",
+          "qty": "1 kg",
+          "price": 39.99,
+          "stock": 200,
+          "description": "Organic and grain-free cat food for optimal health.",
+          "ratings": "4.5",
+          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
+        }
+      },
       "blocked": false,
       "orderedProducts": {
         "order_1724154559219": {
@@ -586,7 +600,8 @@
           },
           "totalPrice": 543.92
         }
-      }
+      },
+      "blocked": true
     },
     {
       "id": "7227",
@@ -594,7 +609,8 @@
       "email": "kk@gmail.com",
       "password": "aaaa",
       "cpassword": "aaaa",
-      "cart": []
+      "cart": [],
+      "blocked": true
     }
   ]
 }

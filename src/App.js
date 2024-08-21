@@ -22,7 +22,7 @@ function App() {
   },[])
   return (
     <div className="App">
-<Toaster richColors position='bottom-right'/>
+<Toaster richColors position='top-right'/>
 {adm &&
     <Admins/> }
     

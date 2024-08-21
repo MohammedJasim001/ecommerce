@@ -11,6 +11,7 @@ const Navbar = () => {
   const { data } = useContext(Items);
   const [input, setInput] = useState("");
   const [isLogine, setIsLogine] = useState(false);
+  const [isDrop, setIsDrop] = useState(false);
 
   const fetchUserData = async () => {
     const userId = localStorage.getItem("id");
@@ -20,19 +21,16 @@ const Navbar = () => {
     } catch (err) {
       console.log(err);
     }
-  }; 
+  };
   useEffect(() => {
     fetchUserData();
   }, []);
- 
 
   const cartCount = users.cart ? Object.keys(users.cart).length : 0;
-
 
   const handleLogout = () => {
     localStorage.clear();
     setIsLogine(false);
-
   };
 
   useEffect(() => {
@@ -54,6 +52,10 @@ const Navbar = () => {
     setInput(e.target.value);
   };
 
+  const handleDrop = () => {
+    isDrop == false ? setIsDrop(true) : setIsDrop(false);
+  };
+
   return (
     <div className="h-24 bg-white shadow-md">
       <div className="flex justify-between items-center p-5">
@@ -69,57 +71,61 @@ const Navbar = () => {
           type="text"
         />
 
-        <div className="flex items-center space-x-5">
-          {isLogine ? (
+        <div className="flex items-center gap-10">
+          {isLogine && (
             <Link to="/orders" className="flex items-center">
-              <MdVerified className="text-3xl text-gray-800" />
-              <button className="hidden md:block ml-2">Orders</button>
-            </Link>
-          ) : (
-            <Link to="/signin" className="flex items-center">
-              <MdVerified className="text-3xl text-gray-800" />
+              <MdVerified className="text-4xl text-gray-800" />
               <button className="hidden md:block ml-2">Orders</button>
             </Link>
           )}
 
           {isLogine ? (
             <Link to="/cart" className="relative flex items-center">
-             
-              <FaCartPlus className="text-3xl text-gray-800" />
+              <FaCartPlus className="text-4xl text-gray-800" />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 rounded-full bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
-              
             </Link>
           ) : (
             <Link to="/signin" className="flex items-center">
-              <FaCartPlus className="text-3xl text-gray-800" />
-              
+              <FaCartPlus className="text-4xl text-gray-800" />
             </Link>
           )}
 
           {isLogine ? (
-
-            <div className="flex items-center ">
-              <div className="flex items-center">
-                <MdLogout onClick={handleLogout} className="text-3xl text-gray-800 cursor-pointer" />
+            <div className="flex items-center gap-10">
+              <div onClick={handleLogout} className="flex items-center">
+                <MdLogout className="text-4xl text-gray-800 cursor-pointer" />
                 <button className="hidden md:block ml-2">LogOut</button>
               </div>
-              <div className="ml-2 bg-blue-600  text-2xl rounded-full p-4 w-[50px] flex justify-center items-center h-[50px] font-bold  text-white">{users.name ? users.name.trim().toUpperCase()[0] : ''}</div>
+
+              <button
+                className="rounded-full bg-blue-950 w-[40px] h-[40px] text-white text-xl"
+                onClick={handleDrop}
+              >
+                {users.name ? users.name.trim().toUpperCase()[0] : ""}
+              </button>
             </div>
-           
-            
           ) : (
             <Link to="/signin" className="flex items-center">
-              <MdAccountCircle className="text-3xl text-gray-800" />
+              <MdAccountCircle className="text-4xl text-gray-800" />
               <button className="hidden md:block ml-2">LogIn</button>
             </Link>
           )}
-          
         </div>
       </div>
+      {isDrop && (
+        <div className="bg-gray-400 fixed right-5 w-[250px] h-[300px] top-20 rounded-md flex flex-col items-center justify-around">
+          
+          <div className="rounded-full bg-blue-950 w-[60px] h-[60px] flex items-center justify-center text-white">
+            {users.name ? users.name.trim().toUpperCase()[0] : ""}
+          </div>
+          <div className="text-xl font-sans font-semibold">Hi, {users.name}</div>
+          <div className="text-xl font-sans font-semibold">{users.email}</div>
+        </div>
+      )}
       <div>
         <SearchResults results={results} setInput={setInput} />
       </div>
