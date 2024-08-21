@@ -5,92 +5,57 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-[#5c6061] rounded-lg p-8 w-full md:w-[700px] max-h-[80vh] overflow-y-auto gap-5 text-white font-sans">
-        <div className="bg-[#3b82f6] p-2 rounded-lg">
-          <h2 className="text-xl font-bold mb-4">User Details</h2>
-          <div>
-            <span className="font-bold">ID:</span> {user.id}
-          </div>
-          <div>
-            <span className="font-bold">Name:</span> {user.name}
-          </div>
-          <div>
-            <span className="font-bold">Email:</span> {user.email}
-          </div>
-          <div>
-            <span className="font-bold">Blocked:</span>{" "}
-            {user.blocked ? "Yes" : "No"}
-          </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-[#10b981] rounded-lg p-6 w-full md:w-[600px] max-h-[80vh] overflow-y-auto text-gray-800">
+        <h2 className="text-2xl font-semibold mb-6">User Details</h2>
+        
+        <div className="mb-4">
+          <p><span className="font-semibold">ID:</span> {user.id}</p>
+          <p><span className="font-semibold">Name:</span> {user.name}</p>
+          <p><span className="font-semibold">Email:</span> {user.email}</p>
+          <p><span className="font-semibold">Blocked:</span> {user.blocked ? "Yes" : "No"}</p>
         </div>
 
         {user.orderedProducts && Object.keys(user.orderedProducts).length > 0 ? (
           Object.keys(user.orderedProducts).map((orderKey, index) => {
             const order = user.orderedProducts[orderKey];
             return (
-              <div key={orderKey} className="bg-[#3b82f6] p-2 mt-4 rounded-lg">
-                <h3 className="text-lg font-bold">
-                  Order {index + 1}
-                </h3>
+              <div key={orderKey} className="bg-[#3b82f6] p-4 rounded-lg mb-4">
+                <h3 className="text-lg font-semibold mb-3">Order {index + 1}</h3>
 
-                <div className="mt-2 bg-[#10b981] p-2 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Ordered Products</h4>
+                <div className="mb-4">
+                  <h4 className="text-md font-semibold underline mb-2">Ordered Products</h4>
                   {order.productData.map((product) => (
-                    <div key={product.id} className="mb-2">
-                      <div>
-                        <span className="font-bold">Product Name:</span> {product.name}
-                      </div>
-                      <div>
-                        <span className="font-bold">Category:</span> {product.category}
-                      </div>
-                      <div>
-                        <span className="font-bold">Price:</span> ${product.price}
-                      </div>
-                      <div>
-                        <span className="font-bold">Quantity:</span> {product.qty}
-                      </div>
-                      <div>
-                        <span className="font-bold">Count:</span> {product.count}
-                      </div>
+                    <div key={product.id} className="mb-3">
+                      <p><span className="font-semibold">Product Name:</span> {product.name}</p>
+                      <p><span className="font-semibold">Category:</span> {product.category}</p>
+                      <p><span className="font-semibold">Price:</span> ${product.price}</p>
+                      <p><span className="font-semibold">Quantity:</span> {product.qty}</p>
+                      <p><span className="font-semibold">Count:</span> {product.count}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-2 bg-[#10b981] p-2 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Order Details</h4>
-                  <div>
-                    <span className="font-bold">Recipient Name:</span>{" "}
-                    {order.orderDetails.name}
-                  </div>
-                  <div>
-                    <span className="font-bold">Mobile Number:</span>{" "}
-                    {order.orderDetails.mobilenumber}
-                  </div>
-                  <div>
-                    <span className="font-bold">Address:</span>{" "}
-                    {order.orderDetails.address}, {order.orderDetails.city},{" "}
-                    {order.orderDetails.state}
-                  </div>
-                  <div>
-                    <span className="font-bold">Payment Method:</span>{" "}
-                    {order.orderDetails.payment}
-                  </div>
-                  <div>
-                    <span className="font-bold">Total Price:</span> ${order.totalPrice}
-                  </div>
+                <div>
+                  <h4 className="text-md font-semibold underline mb-2">Order Details</h4>
+                  <p><span className="font-semibold">Recipient Name:</span> {order.orderDetails.name}</p>
+                  <p><span className="font-semibold">Mobile Number:</span> {order.orderDetails.mobilenumber}</p>
+                  <p><span className="font-semibold">Address:</span> {order.orderDetails.address}, {order.orderDetails.city}, {order.orderDetails.state}</p>
+                  <p><span className="font-semibold">Payment Method:</span> {order.orderDetails.payment}</p>
+                  <p><span className="font-semibold">Total Price:</span> ${order.totalPrice}</p>
                 </div>
               </div>
             );
           })
         ) : (
-          <div className="bg-red-500 p-2 mt-4 rounded-lg">
+          <div className="bg-red-600 p-4 rounded-lg mb-4">
             <p>No orders found for this user.</p>
           </div>
         )}
 
         <button
           onClick={onClose}
-          className="mt-6 bg-blue-500 text-white px-4 py-2 rounded"
+          className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-200"
         >
           Close
         </button>
@@ -98,6 +63,7 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
     </div>
   );
 };
+
 
 const Users = () => {
   const [users, setUsers] = useState([]);

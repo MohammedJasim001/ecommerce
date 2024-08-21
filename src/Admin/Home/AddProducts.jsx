@@ -5,23 +5,21 @@ import { toast } from "sonner";
 
 const AddProducts = () => {
   const navigate = useNavigate();
-  
 
-  const [data,setData]=useState([])
+  const [data, setData] = useState([]);
 
-  const fn = async() =>{
-    try{
-      const response= await axios.get('http://localhost:3000/products')
-      setData(response.data)
-    }
-    catch(err){
+  const fn = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/products");
+      setData(response.data);
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
-  useEffect(()=>{
-    fn()
-  },[])
+  useEffect(() => {
+    fn();
+  }, []);
 
   const [input, setInput] = useState({
     id: "",
@@ -30,10 +28,10 @@ const AddProducts = () => {
     category: "",
     image: "",
     brand: "",
-    description:"",
-    ratings:"",
-    item:"",
-    qty:""
+    description: "",
+    ratings: "",
+    item: "",
+    qty: "",
   });
 
   const handleChange = (e) => {
@@ -45,30 +43,48 @@ const AddProducts = () => {
   };
 
   const handleSaveProduct = async () => {
-   
-    const { id, name, price, category, image, brand, description, ratings, item} = input;
-    if (!id || !name || !price || !category || !image || !brand|| !description|| !ratings) {
+    const {
+      id,
+      name,
+      price,
+      category,
+      image,
+      brand,
+      description,
+      ratings,
+      item,
+    } = input;
+    if (
+      !id ||
+      !name ||
+      !price ||
+      !category ||
+      !image ||
+      !brand ||
+      !description ||
+      !ratings
+    ) {
       toast.warning(" Fill the required details.");
-      return; 
+      return;
+    } else {
+      try {
+        const response = await axios.post(
+          `http://localhost:3000/products/`,
+          input
+        );
+        setData([...data, response.data]);
+      } catch (err) {
+        console.log(err);
+      }
+      navigate("/admin/products");
+      fn();
+      toast.success("Product added");
     }
-    else{
-    try {
-      const response = await axios.post(`http://localhost:3000/products/`, input);
-      setData([...data, response.data]); 
-      
-     
-    } catch (err) {
-      console.log(err);
-    }
-    navigate('/admin/products')
-    fn()
-    toast.success('Product added')
-  }
   };
 
   return (
     <div className="mt-8 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 flex justify-between shadow-lg gap-2">
+      <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 md:flex justify-between shadow-lg gap-2">
         <div className="flex-1 space-y-6">
           <h2 className="text-2xl font-semibold text-gray-800">Add Product</h2>
 
@@ -138,45 +154,29 @@ const AddProducts = () => {
           </div>
 
           <div>
-          <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-700">
               Description
             </label>
-          <textarea 
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-          name="description" 
-          value={input.description}
-          onChange={handleChange}
-          ></textarea>
-
+            <textarea
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              name="description"
+              value={input.description}
+              onChange={handleChange}
+            ></textarea>
           </div>
 
-          <div className="flex justify-end space-x-4">
-            <button
-              onClick={() => setInput('')}
-              className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-200"
-            >
-              Cancel
-            </button>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
-              onClick={handleSaveProduct}
-              type="submit"
-            >
-              Save
-            </button>
+          
+        </div>
+
+        <div className="flex-1 space-y-6">
+          <div className="ml-8 flex-shrink-0">
+            <img
+              className="w-48 h-48 object-cover rounded-lg border border-gray-300 shadow-md"
+              src={input.image}
+              alt="Product"
+            />
           </div>
-        </div>
-
-        <div className="w-[50%] space-y-6">
-
-        <div className="ml-8 flex-shrink-0">
-          <img
-            className="w-48 h-48 object-cover rounded-lg border border-gray-300 shadow-md"
-            src={input.image}
-            alt="Product"
-          />
-        </div>
-        <div>
+          <div>
             <label className="block text-sm font-medium text-gray-700">
               Image URL
             </label>
@@ -227,9 +227,22 @@ const AddProducts = () => {
               onChange={handleChange}
             />
           </div>
-
+          <div className="flex justify-end space-x-4">
+            <button
+              onClick={() => setInput("")}
+              className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-200"
+            >
+              Cancel
+            </button>
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+              onClick={handleSaveProduct}
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
         </div>
-        
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const ProductLists = () => {
                 </h1>
                 <p className="text-gray-700 mt-2">{datas.description}</p>
                 <div className="mt-2">
-                  <span className="font-medium text-gray-600">Qty: </span>
+                  
                   <span className="text-gray-700">{datas.qty}</span>
                 </div>
                 <div className="mt-2">

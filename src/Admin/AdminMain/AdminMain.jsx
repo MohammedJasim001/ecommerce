@@ -1,11 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
 import AdminHome from '../Home/AdminHome'
-import Users from '../Home/Users'
-import AdminProduct from '../Home/AdminProduct'
+
 import axios from 'axios'
-import Dashbord from '../Home/Dashbord'
-import AddProducts from '../Home/AddProducts'
+
 export const Products =createContext()
 
 const AdminMain = () => {
@@ -35,10 +33,6 @@ useEffect(()=>{
         <Products.Provider value={{data,users}}>
         <Routes>
             <Route path='/admin/:url' element={<AdminHome/>}/>
-            {/* <Route path='/users' element={<Users/>}/>
-            <Route path='/products' element={<AdminProduct/>}/>
-            <Route path='/dashbord' element={<Dashbord/>}/>
-            <Route path='/addproducts' element={<AddProducts/>}/> */}
             
             
         </Routes>

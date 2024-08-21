@@ -3,9 +3,9 @@
 import { Toaster } from 'sonner';
 import './App.css';
 import Main from './Components/MainPage/Main';
-import AdminMain from './Admin/AdminMain/AdminMain';
-import { useEffect, useState } from 'react';
 
+import { lazy, useEffect, useState } from 'react';
+const Admins = lazy(()=>import('./Admin/AdminMain/AdminMain'))
 
 
 
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
 <Toaster richColors position='bottom-right'/>
 {adm &&
-    <AdminMain/> }
+    <Admins/> }
     
       <Main/>
      

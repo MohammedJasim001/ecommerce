@@ -5,20 +5,15 @@ const Dashbord = () => {
   const { data, users } = useContext(Products);
 
   
-  // const totalOrders = users.reduce((acc, user) => {
-  //   if (user.orderedProducts && user.orderedProducts.productData.length > 0) {
-  //     return acc + 1; 
-  //   }
-  //   return acc;
-  // }, 0);
-
-
- console.log(users.orderedProducts&&Object.keys(users.orderedProducts) .map((prokey)=>{
-  return users.orderedProducts[prokey].productData.length
- }),'hjk')
+  const totalOrders = users.reduce((acc, user) => {
+    if (user.orderedProducts && Object.keys(user.orderedProducts).length > 0) {
+      return acc + Object.keys(user.orderedProducts).length;
+    }
+    return acc;
+  }, 0);
   
-  // console.log(totalOrders);
-
+  console.log(totalOrders);
+  
   
   
   
@@ -38,7 +33,7 @@ const Dashbord = () => {
 
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-xl font-semibold text-gray-800">Total Orders</h2>
-            <p className="text-gray-600 mt-2"></p>
+            <p className="text-gray-600 mt-2">{totalOrders}</p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-lg">

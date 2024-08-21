@@ -107,7 +107,7 @@ const Navbar = () => {
                 <MdLogout onClick={handleLogout} className="text-3xl text-gray-800 cursor-pointer" />
                 <button className="hidden md:block ml-2">LogOut</button>
               </div>
-              <div className="ml-2 bg-blue-600 px-1 rounded-lg text-white">{users.name}</div>
+              <div className="ml-2 bg-blue-600  text-2xl rounded-full p-4 w-[50px] flex justify-center items-center h-[50px] font-bold  text-white">{users.name ? users.name.trim().toUpperCase()[0] : ''}</div>
             </div>
            
             
