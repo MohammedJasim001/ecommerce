@@ -12,12 +12,8 @@ import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
 import Orders from '../HomePage/Orders'
 import NonofThis from './NonofThis'
-import { RemovCart } from '../AllProducts/Addcart'
-
-
 
 export const Items=createContext()
-
 
 const Main = () => {
   
@@ -42,7 +38,8 @@ useEffect(()=>{
     .catch(err=>console.log(err))
 },[])
 
-useEffect(() => {
+
+
   const fetchUserData = async () => {
     const userId = localStorage.getItem("id");
     try {
@@ -52,7 +49,7 @@ useEffect(() => {
       console.log(err);
     }
   };
-  
+  useEffect(() => {
     fetchUserData();
   }, []);
 
@@ -62,7 +59,7 @@ useEffect(() => {
   return (
     <div className='bg-slate-100'>
        
-      <Items.Provider value={{data, setData,users,setUsers,cartCount,setCartCount}}>
+      <Items.Provider value={{data, setData,users,setUsers,cartCount,setCartCount,fetchUserData}}>
       
       <Routes>
       

@@ -42,6 +42,7 @@ const OrdersPage = () => {
               const order = orders[key];
               return (
                 <div key={index} className="flex justify-around border p-4 rounded-lg shadow-lg">
+                
                   
                   <div className="w-[25%]">
                     <div className="border shadow-lg rounded-lg pl-3 h-[50vh]">

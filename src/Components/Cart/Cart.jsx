@@ -56,7 +56,7 @@ const Cart = () => {
 
   return (
    <div>
-    <Navbar />
+    <Navbar handleRemove={RemovCart}/>
      <div className="min-h-screen mt-5">
       {cart.length!==0?
         <div className="md:flex ">

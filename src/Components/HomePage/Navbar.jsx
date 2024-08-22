@@ -7,31 +7,37 @@ import { MdLogout, MdVerified, MdAccountCircle } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "sonner";
+import { RemovCart } from "../AllProducts/Addcart";
 
 const Navbar = () => {
+  
   const navigate = useNavigate();
-  const { data, cartCount } = useContext(Items);
+  const { data, cartCount ,fetchUserData} = useContext(Items);
   const [input, setInput] = useState("");
   const [isLogine, setIsLogine] = useState(false);
   const [isDrop, setIsDrop] = useState(false);
   const [theUser, setTheUser] = useState([]);
 
+
+  const fetchUser = async () => {
+    const userId = localStorage.getItem("id");
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/users/${userId}`
+      );
+      setTheUser(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  // fetchUser();
   useEffect(() => {
-    const fetchUserData = async () => {
-      const userId = localStorage.getItem("id");
-      try {
-        const response = await axios.get(
-          `http://localhost:3000/users/${userId}`
-        );
-        setTheUser(response.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchUserData();
+    
+    fetchUser()
+    fetchUserData()
   }, []);
 
-  const cartCountSettings = cartCount ? Object.keys(cartCount).length : 0;
+  const cartCountSettings = Object.keys(cartCount).length ;
 
   console.log(cartCountSettings);
   
@@ -93,11 +99,9 @@ const Navbar = () => {
           {isLogine ? (
             <Link to="/cart" className="relative flex items-center">
               <FaCartPlus className="text-2xl md:text-4xl text-gray-800" />
-              {cartCountSettings > 0 && (
                 <span className="absolute -top-2 -right-2 rounded-full bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center">
                   {cartCountSettings}
                 </span>
-              )}
             </Link>
           ) : (
             <FaCartPlus
