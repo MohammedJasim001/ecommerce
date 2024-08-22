@@ -7,24 +7,20 @@ import { MdLogout, MdVerified, MdAccountCircle } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "sonner";
-import { RemovCart } from "../AllProducts/Addcart";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const Navbar = () => {
-  
   const navigate = useNavigate();
-  const { data, cartCount ,fetchUserData} = useContext(Items);
+  const { data, cartCount, fetchUserData } = useContext(Items);
   const [input, setInput] = useState("");
   const [isLogine, setIsLogine] = useState(false);
   const [isDrop, setIsDrop] = useState(false);
   const [theUser, setTheUser] = useState([]);
 
-
   const fetchUser = async () => {
     const userId = localStorage.getItem("id");
     try {
-      const response = await axios.get(
-        `http://localhost:3000/users/${userId}`
-      );
+      const response = await axios.get(`http://localhost:3000/users/${userId}`);
       setTheUser(response.data);
     } catch (err) {
       console.log(err);
@@ -32,15 +28,11 @@ const Navbar = () => {
   };
   // fetchUser();
   useEffect(() => {
-    
-    fetchUser()
-    fetchUserData()
-  }, []);
+    fetchUser();
+    fetchUserData();
+  }, [fetchUserData]);
 
-  const cartCountSettings = Object.keys(cartCount).length ;
-
-  console.log(cartCountSettings);
-  
+  const cartCountSettings = Object.keys(cartCount).length;
 
   const handleLogout = () => {
     localStorage.clear();
@@ -72,10 +64,18 @@ const Navbar = () => {
 
   return (
     <div className="h-24 bg-white shadow-md">
-      <div className="flex justify-between items-center p-5">
-        <h1 className=" text-2xl font-bold text-gray-800 pr-3">
-          Luna<span className="text-green-500">Pets</span>
-        </h1>
+      <div className="flex justify-between items-center py-5 pr-5">
+        <div className="flex gap-3">
+          <button 
+            onClick={() => navigate(-1)}
+            className="bg-black text-white  rounded-lg px-2"
+          >
+            <IoMdArrowRoundBack className="text-2xl "/>
+          </button>
+          <h1 className=" text-2xl font-bold text-gray-800 pr-3">
+            Luna<span className="text-green-500">Pets</span>
+          </h1>
+        </div>
 
         <div className="relative flex items-center w-full max-w-md ">
           <input
@@ -99,9 +99,9 @@ const Navbar = () => {
           {isLogine ? (
             <Link to="/cart" className="relative flex items-center">
               <FaCartPlus className="text-2xl md:text-4xl text-gray-800" />
-                <span className="absolute -top-2 -right-2 rounded-full bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center">
-                  {cartCountSettings}
-                </span>
+              <span className="absolute -top-2 -right-2 rounded-full bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center">
+                {cartCountSettings}
+              </span>
             </Link>
           ) : (
             <FaCartPlus
