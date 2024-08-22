@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "sonner";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -35,8 +36,27 @@ const Navbar = () => {
   const cartCountSettings = Object.keys(cartCount).length;
 
   const handleLogout = () => {
-    localStorage.clear();
-    setIsLogine(false);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      position: 'top-end',
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        setIsLogine(false);
+        Swal.fire({
+          title: 'Logged out!',
+          text: 'You have been successfully logged out.',
+          icon: 'success',
+          position: 'top-end',
+      });
+      }
+    });
   };
 
   useEffect(() => {
@@ -66,11 +86,11 @@ const Navbar = () => {
     <div className="h-24 bg-white shadow-md">
       <div className="flex justify-between items-center py-5 pr-5">
         <div className="flex gap-3">
-          <button 
+          <button
             onClick={() => navigate(-1)}
             className="bg-black text-white  rounded-lg px-2"
           >
-            <IoMdArrowRoundBack className="text-2xl "/>
+            <IoMdArrowRoundBack className="text-2xl " />
           </button>
           <h1 className=" text-2xl font-bold text-gray-800 pr-3">
             Luna<span className="text-green-500">Pets</span>
