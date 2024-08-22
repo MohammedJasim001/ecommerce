@@ -22,16 +22,16 @@ const ProductLists = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar itemss={items}/>
       <div className="p-4 md:p-8 bg-gray-50">
         {items.map((datas) => (
           <div
             key={datas.id}
             className="bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col md:flex-row md:mx-20 mx-5 my-5 p-4"
           >
-            <div className="flex-shrink-0 md:w-[300px]">
+            <div className="flex md:w-[300px] items-center">
               <img
-                className="w-full h-[300px] object-cover rounded-lg"
+                className=" h-[300px] object-cover rounded-lg"
                 src={datas.image}
                 alt={datas.name}
               />

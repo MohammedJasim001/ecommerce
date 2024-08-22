@@ -5,6 +5,10 @@ import Users from "./Users";
 import Dashbord from "./Dashbord";
 import AddProducts from "./AddProducts";
 import { VscThreeBars } from "react-icons/vsc";
+import { FaUsers } from "react-icons/fa";
+import { IoIosCart } from "react-icons/io";
+import { BiCartAdd } from "react-icons/bi";
+import { MdSpaceDashboard } from "react-icons/md";
 
 const AdminHome = () => {
   const navigate = useNavigate()
@@ -12,16 +16,21 @@ const AdminHome = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const Data = [
-    { title: "Users", url: "users" },
-    { title: "Products", url: "products" },
-    { title: "Dashboard", url: "dashbord" },
-    { title: "Add Products", url: "addproducts" },
+    { title: "Users", url: "users", icon:<FaUsers /> },
+    { title: "Products", url: "products", icon:<IoIosCart /> },
+    { title: "Dashboard", url: "dashbord", icon:<MdSpaceDashboard />},
+    { title: "Add Products", url: "addproducts",icon:<BiCartAdd /> },
   ];
+
+  const handleLogout = ()=>{
+    localStorage.clear()
+    navigate('/signin')
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100 w-full absolute">
-      <nav className="bg-[#3b82f6] shadow w-full fixed top-0 left-0 z-20">
-        <div className="mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="bg-[#3b82f6] shadow w-full fixed top-0 left-0 z-20 ">
+        <div className="mx-auto px-6 py-4 flex justify-between items-center h-[10vh]">
           <div className="flex gap-2">
             <button
               className="text-white md:hidden focus:outline-none"
@@ -39,7 +48,7 @@ const AdminHome = () => {
                 </button>
             </div>
             <div className="flex items-center">
-                <button onClick={()=>navigate(`/signin`)}
+                <button onClick={handleLogout}
                   className="text-white hover:text-gray-300 mr-4">
                   Logo Out
                 </button>
@@ -50,19 +59,20 @@ const AdminHome = () => {
       </nav>
 
       <div
-        className={`fixed inset-0 bg-[#10b981] text-white transform ${
+        className={`fixed mt-10 bg-[#10b981] text-white transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out w-72 h-full pt-20 z-10 md:translate-x-0`}
       >
         {Data.map((item, ind) => (
           <Link
             key={ind}
-            className="block w-[80%] mx-auto"
+            className="block w-[80%] mx-auto "
             to={`/admin/${item.url}`}
             onClick={() => setIsOpen(false)}
           >
-            <div className="hover:bg-[#34d399] rounded px-6 py-2 mb-4">
-              {item.title}
+            <div className="hover:bg-[#34d399] rounded px-6 py-2 mb-4 flex items-center text-xl gap-2">
+             <div className="text-4xl text-black"> {item.icon}</div>
+             <div> {item.title}</div>
             </div>
           </Link>
         ))}

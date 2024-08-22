@@ -108,15 +108,15 @@
     },
     {
       "id": "10",
-      "name": "Whiskas Temptations Treats",
-      "brand": "Whiskas",
+      "name": "Royal Canin Feline Health Nutrition",
+      "brand": "Royal Canin",
       "category": "Cat",
       "item": "Cat Food",
-      "qty": "180 g",
-      "price": 6.99,
-      "description": "Irresistible treats for your cat.",
-      "ratings": 4.7,
-      "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
+      "qty": "1 kg",
+      "price": 34.99,
+      "description": "Tailored nutrition for adult cats.",
+      "ratings": 4.8,
+      "image": "https://th.bing.com/th/id/R.11af40d4361782a5f1aa4612f669faf6?rik=nnEGSYRr3CzbsQ&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f1361236-center-1&ehk=UGS9KSRt4boxCjKi9btEJmA3L%2bd9r6MboS2jqt05Qa0%3d&risl=&pid=ImgRaw&r=0"
     },
     {
       "id": "11",
@@ -316,15 +316,15 @@
     },
     {
       "id": "28",
-      "name": "Royal Canin Feline Health Nutrition",
-      "brand": "Royal Canin",
+      "name": "Whiskas Temptations Treats",
+      "brand": "Whiskas",
       "category": "Cat",
       "item": "Cat Food",
-      "qty": "1 kg",
-      "price": 34.99,
-      "description": "Tailored nutrition for adult cats.",
-      "ratings": 4.8,
-      "image": "https://th.bing.com/th/id/R.11af40d4361782a5f1aa4612f669faf6?rik=nnEGSYRr3CzbsQ&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f1361236-center-1&ehk=UGS9KSRt4boxCjKi9btEJmA3L%2bd9r6MboS2jqt05Qa0%3d&risl=&pid=ImgRaw&r=0"
+      "qty": "180 g",
+      "price": 6.99,
+      "description": "Irresistible treats for your cat.",
+      "ratings": 4.7,
+      "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
     }
   ],
   "users": [
@@ -413,33 +413,7 @@
       "email": "salman@gmail.com",
       "password": "1111",
       "cpassword": "1111",
-      "cart": {
-        "1": {
-          "id": "1",
-          "name": "Premium Dog Food",
-          "category": "dog",
-          "brand": "Pedigree",
-          "item": "Dog Food",
-          "qty": "1 kg",
-          "price": "49.99",
-          "stock": 150,
-          "description": "High-quality dry dog food with natural ingredients.",
-          "ratings": 4.7,
-          "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
-        },
-        "7": {
-          "id": "7",
-          "name": "Whiskas Dry Cat Food",
-          "brand": "Whiskas",
-          "category": "Cat",
-          "item": "Cat Food",
-          "qty": "950 g",
-          "price": 18.99,
-          "description": "Delicious dry cat food for everyday nutrition.",
-          "ratings": 4.8,
-          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
-        }
-      },
+      "cart": {},
       "blocked": false,
       "orderedProducts": {
         "order_1724154559219": {

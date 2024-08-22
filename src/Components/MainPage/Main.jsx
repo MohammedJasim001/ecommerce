@@ -12,6 +12,7 @@ import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
 import Orders from '../HomePage/Orders'
 import NonofThis from './NonofThis'
+import { RemovCart } from '../AllProducts/Addcart'
 
 
 
@@ -23,6 +24,7 @@ const Main = () => {
 
 const [data,setData]=useState([])
 const [users,setUsers]=useState([])
+const [cartCount,setCartCount]=useState([])
 useEffect(()=>{
   axios.get('http://localhost:3000/products')
 
@@ -40,13 +42,27 @@ useEffect(()=>{
     .catch(err=>console.log(err))
 },[])
 
+useEffect(() => {
+  const fetchUserData = async () => {
+    const userId = localStorage.getItem("id");
+    try {
+      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      setCartCount(response.data.cart);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
+    fetchUserData();
+  }, []);
+
 
 
 
   return (
     <div className='bg-slate-100'>
        
-      <Items.Provider value={{data, setData,users,setUsers}}>
+      <Items.Provider value={{data, setData,users,setUsers,cartCount,setCartCount}}>
       
       <Routes>
       

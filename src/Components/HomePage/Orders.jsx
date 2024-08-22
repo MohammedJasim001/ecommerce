@@ -42,7 +42,7 @@ const OrdersPage = () => {
               const order = orders[key];
               return (
                 <div key={index} className="flex justify-around border p-4 rounded-lg shadow-lg">
-                  {/* Order Details */}
+                  
                   <div className="w-[25%]">
                     <div className="border shadow-lg rounded-lg pl-3 h-[50vh]">
                       <h2 className="text-xl font-bold text-center">Order Details</h2>
@@ -73,7 +73,7 @@ const OrdersPage = () => {
                     </div>
                   </div>
 
-                  {/* Product Details */}
+                 
                   <div className="flex flex-col gap-4 w-[70%]">
                     {order.productData.map((product, idx) => (
                       <div

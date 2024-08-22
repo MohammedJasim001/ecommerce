@@ -2,6 +2,9 @@ import axios from "axios";
 import { toast } from "sonner";
 
 export const AddCarts = async (e) => {
+  if(e==="a"){
+    return 0
+  }
   const user = localStorage.getItem("id");
   if (user) {
     try {

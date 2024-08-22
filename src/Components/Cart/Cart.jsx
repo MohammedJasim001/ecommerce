@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { RemovCart } from "../AllProducts/Addcart";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Navbar from "../HomePage/Navbar";
 import Footer from "../HomePage/Footer";
@@ -56,7 +56,7 @@ const Cart = () => {
 
   return (
    <div>
-    <Navbar/>
+    <Navbar />
      <div className="min-h-screen mt-5">
       {cart.length!==0?
         <div className="md:flex ">
