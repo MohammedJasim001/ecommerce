@@ -19,7 +19,7 @@ const AllProuducts = ({ products }) => {
         />
 
         <div className="flex flex-col gap-[10px]  ">
-          <h1 className=" font-bold tracking-tight text-gray-900">
+          <h1 className="font-bold text-gray-900">
             {products.name}
           </h1>
           <span className="text-green-600 font-bold ml-2">{products.ratings} ★</span>

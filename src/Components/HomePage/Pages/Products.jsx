@@ -17,7 +17,7 @@ const Products = ({ product }) => {
                     alt=""
                   />
 
-                  <h1 className=" font-bold tracking-tight text-gray-900 ">
+                  <h1 className=" text-center font-bold text-gray-900 ">
                     {product.name}
                   </h1>
                 </div>

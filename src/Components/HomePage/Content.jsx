@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-
-import cat from "../Assets/cat6.jpg";
-import dog from "../Assets/dog3.jpg";
-import both from "../Assets/cat&dog.jpg";
+import cat from "../Assets/catimage.jpg"
+import dog from "../Assets/dogimage.jpg"
 import Products from "./Pages/Products";
 import { Items } from "../MainPage/Main";
 import Navbar from "./Navbar";
@@ -44,19 +42,19 @@ const Content = () => {
       </div>
 
       <div>
-        <h1 className="text-2xl md:text-3xl font-sans font-bold ml-10 mt-10">
+        <h1 className="text-2xl md:text-3xl font-sans font-bold ml-10 mt-10 ">
           Shop for
         </h1>
 
-        <div className="flex flex-col md:flex-row items-center justify-center mt-10 gap-10 md:gap-28">
-          <div className="transition duration-300 ease-in-out transform hover:scale-110 ">
+        <div className="flex flex-col md:flex-row items-center justify-center mt-10 gap-5 mx-2">
+          <div className="">
             <Link to="/cat">
-              <img className="  rounded-lg" src={catmain} alt="Cat" />
+              <img className="  rounded-lg" src={cat} alt="Cat" />
             </Link>
           </div>
-          <div className="transition duration-300 ease-in-out transform hover:scale-110 ">
+          <div className="">
             <Link to="/dog">
-              <img className="" src={dogmain} alt="Dog" />
+              <img className="" src={dog} alt="Dog" />
             </Link>
           </div>
         </div>
@@ -95,7 +93,7 @@ const Content = () => {
                     alt=""
                   />
 
-                  <h1 className=" font-bold tracking-tight text-gray-900 ">
+                  <h1 className="font-bold text-gray-900 ">
                     {best.name}
                   </h1>
                 </div>

@@ -12,13 +12,13 @@ const DogProducts = ({products}) => {
         onClick={() => navigate(`/productdetails/${products.id}`)}
       >
         <img
-          className="w-[200px] gap-2 rounded-lg m-auto mt-3 h-[200px] "
+          className="w-[200px] gap-2 rounded-lg m-auto mt-3 h-[200px] mb-3"
           src={products.image}
           alt=""
         />
 
         <div className="flex flex-col gap-[10px]  ">
-          <h1 className=" font-bold tracking-tight text-gray-900">
+          <h1 className=" font-bold text-gray-900">
             {products.name}
           </h1>
           <span className="text-green-600 font-bold ml-2">{products.ratings} ★</span>
