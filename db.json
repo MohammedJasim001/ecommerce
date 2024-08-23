@@ -11,7 +11,7 @@
       "stock": 150,
       "description": "High-quality dry dog food with natural ingredients.",
       "ratings": 4.7,
-      "image": "https://th.bing.com/th/id/OIP.hYWtZ5l2PyRGDnz46VGf8AAAAA?rs=1&pid=ImgDetMain"
+      "image": "https://www.poshaprani.com/wp-content/uploads/2019/07/pedigree-adult-dog-food-meat-rice-1-2-kg-874x1024.png"
     },
     {
       "id": "2",
@@ -136,6 +136,7 @@
       "brand": "Whiskas",
       "category": "Cat",
       "item": "Cat Food",
+      "bestseller":true,
       "qty": "100 g",
       "price": 16.99,
       "description": "Grilled slices in gravy for a delicious meal.",
@@ -189,10 +190,11 @@
     },
     {
       "id": "17",
-      "name": "Dr. Elsey's Precious Cat Ultra",
+      "name": "Precious Cat Ultra",
       "brand": "Dr. Elsey's",
       "category": "Cat",
       "item": "Cat Litter",
+      "bestseller":true,
       "qty": "5 kg",
       "price": 68.99,
       "description": "Clumping cat litter with superior odor control.",
@@ -250,6 +252,7 @@
       "brand": "Acana",
       "category": "Dog",
       "item": "Dog Food",
+      "bestseller":true,
       "qty": "2 kg",
       "description": "A grain-free dry dog food made with beef, pork, and lamb.",
       "price": 64.99,
@@ -258,10 +261,11 @@
     },
     {
       "id": "23",
-      "name": "Wellness CORE RawRev High-Protein",
+      "name": "Wellness CORE RawRev",
       "brand": "Wellness",
       "category": "Dog",
       "item": "Dog Food",
+      "bestseller":true,
       "qty": "2 kg",
       "description": "High-protein, grain-free dry dog food with raw bites.",
       "price": 75.99,
@@ -308,6 +312,7 @@
       "brand": "Meow",
       "category": "Cat",
       "item": "Cat Food",
+      "bestseller":true,
       "qty": "1 kg",
       "price": 20.99,
       "description": "Crunchy outside, tender inside dry cat food.",
@@ -324,7 +329,7 @@
       "price": 6.99,
       "description": "Irresistible treats for your cat.",
       "ratings": 4.7,
-      "image": "https://th.bing.com/th/id/OIP.WW0MSok7hcU0YJjDeKVO_AHaJ0?rs=1&pid=ImgDetMain"
+      "image": "https://bigamartusax.s3-accelerate.amazonaws.com/2020/07/81GG-V3NY3L._AC_SL1500_.jpg"
     }
   ],
   "users": [

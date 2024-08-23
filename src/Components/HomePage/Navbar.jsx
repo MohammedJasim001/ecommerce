@@ -88,17 +88,18 @@ const Navbar = () => {
   return (
     <div className="h-24 bg-black shadow-md text-white">
       <div className="flex md:justify-around items-center py-5 pr-5">
-        <div className="flex ">
+        <button onClick={()=>navigate(-1)}
+          className="flex ">
           <img className="w-7 md:w-10" 
            src={icon} alt="" />
           <h1 className=" text-2xl md:text-4xl font-bold text-white pr-3">
             Luna<span className="text-[#36eb36]">Pets</span>
           </h1>
-        </div>
+        </button>
 
-        <div className="relative flex items-center w-full ml-6 md:ml-20 ">
+        <div className="relative flex items-center w-full ml-6 md:ml-20 md:mr-10">
           <input
-            className="border border-gray-300 h-12 rounded-lg pl-10 pr-4 w-full" 
+            className="border border-gray-300 h-12 rounded-lg pl-10 pr-4 w-full text-black" 
             placeholder="Search Products..."
             onChange={handleChange}
             value={input}

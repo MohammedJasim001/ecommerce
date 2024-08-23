@@ -10,7 +10,7 @@ const SearchResults = ({results,setInput}) => {
     }
    
   return (
-    <div className='flex flex-col items-center '>
+    <div className='flex flex-col items-center text-black'>
        
         {results.map((details,id)=>{
             return <div className='flex items-center  border w-[40%] justify-center bg-white z-10' 
