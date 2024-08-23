@@ -16,7 +16,6 @@ const AddProducts = () => {
       console.log(err);
     }
   };
-
   useEffect(() => {
     fn();
   }, []);
@@ -52,10 +51,18 @@ const AddProducts = () => {
       brand,
       description,
       ratings,
-      item,
     } = input;
+  
+    const generatedId = id || Date.now().toString();
+  
+   
+    const existingProduct = data.find((product) => product.id === generatedId);
+    if (existingProduct) {
+      toast.warning("ID already exists");
+      return;
+    }
+  
     if (
-      !id ||
       !name ||
       !price ||
       !category ||
@@ -64,24 +71,28 @@ const AddProducts = () => {
       !description ||
       !ratings
     ) {
-      toast.warning(" Fill the required details.");
+      toast.warning("Fill the required details.");
       return;
-    } else {
-      try {
-        const response = await axios.post(
-          `http://localhost:3000/products/`,
-          input
-        );
-        setData([...data, response.data]);
-      } catch (err) {
-        console.log(err);
-      }
+    }
+  
+    try {
+      const response = await axios.post(`http://localhost:3000/products/`, {
+        ...input,
+        id: generatedId, // Use the generated ID if not provided
+      });
+      setData([...data, response.data]);
       navigate("/admin/products");
       fn();
       toast.success("Product added");
+    } catch (err) {
+      console.log(err);
     }
   };
-
+  
+  
+  console.log(data);
+  
+  
   return (
     <div className="mt-8 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 md:flex justify-between shadow-lg gap-2">
