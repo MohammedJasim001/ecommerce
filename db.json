@@ -335,7 +335,21 @@
       "password": "1234",
       "cpassword": "1234",
       "admin": true,
-      "cart": {}
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "Organic Cat Food",
+          "category": "Cat",
+          "brand": "Meow Mix",
+          "item": "Cat Food",
+          "qty": "1 kg",
+          "price": 39.99,
+          "stock": 200,
+          "description": "Organic and grain-free cat food for optimal health.",
+          "ratings": "4.5",
+          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
+        }
+      }
     },
     {
       "id": "3263",
@@ -343,7 +357,21 @@
       "email": "ab@gmail.com",
       "password": "1234",
       "cpassword": "1234",
-      "cart": "",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "Organic Cat Food",
+          "category": "Cat",
+          "brand": "Meow Mix",
+          "item": "Cat Food",
+          "qty": "1 kg",
+          "price": 39.99,
+          "stock": 200,
+          "description": "Organic and grain-free cat food for optimal health.",
+          "ratings": "4.5",
+          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
+        }
+      },
       "blocked": false,
       "orderedProducts": {
         "order_1724154733434": {
@@ -413,7 +441,19 @@
       "email": "salman@gmail.com",
       "password": "1111",
       "cpassword": "1111",
-      "cart": "",
+      "cart": {
+        "3": {
+          "id": "3",
+          "name": "Furminator deShedding Tool",
+          "brand": "Furminator",
+          "category": "Cat",
+          "item": "Cat Grooming",
+          "price": 29.99,
+          "description": "Reduces shedding up to 90% with regular use.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
+        }
+      },
       "blocked": false,
       "orderedProducts": {
         "order_1724154559219": {
@@ -509,6 +549,45 @@
             "payment": "upi"
           },
           "totalPrice": 69.98
+        },
+        "order_1724388675922": {
+          "productData": [
+            {
+              "id": "3",
+              "name": "Furminator deShedding Tool",
+              "brand": "Furminator",
+              "category": "Cat",
+              "item": "Cat Grooming",
+              "price": 29.99,
+              "description": "Reduces shedding up to 90% with regular use.",
+              "ratings": 4.7,
+              "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain",
+              "count": 1
+            },
+            {
+              "id": "7",
+              "name": "Whiskas Dry Cat Food",
+              "brand": "Whiskas",
+              "category": "Cat",
+              "item": "Cat Food",
+              "qty": "950 g",
+              "price": 18.99,
+              "description": "Delicious dry cat food for everyday nutrition.",
+              "ratings": 4.8,
+              "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain",
+              "count": 1
+            }
+          ],
+          "orderDetails": {
+            "name": "hahaha",
+            "mobilenumber": "1111111122",
+            "pincode": "111111",
+            "address": "dasda",
+            "city": "111",
+            "state": "111",
+            "payment": "cod"
+          },
+          "totalPrice": 48.98
         }
       }
     },

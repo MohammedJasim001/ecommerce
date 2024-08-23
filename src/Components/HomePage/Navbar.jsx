@@ -9,6 +9,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Swal from "sweetalert2";
+import icon from "../Assets/icon.png"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,11 +28,11 @@ const Navbar = () => {
       console.log(err);
     }
   };
-  // fetchUser();
+  
   useEffect(() => {
     fetchUser();
-    fetchUserData();
-  }, [fetchUserData]);
+    
+  }, []);
 
   const cartCountSettings = Object.keys(cartCount).length;
 
@@ -55,8 +56,10 @@ const Navbar = () => {
           icon: 'success',
           position: 'top-end',
       });
+      navigate('/')
       }
     });
+   
   };
 
   useEffect(() => {
@@ -83,42 +86,38 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-24 bg-white shadow-md">
-      <div className="flex justify-between items-center py-5 pr-5">
-        <div className="flex gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="bg-black text-white  rounded-lg px-2"
-          >
-            <IoMdArrowRoundBack className="text-2xl " />
-          </button>
-          <h1 className=" text-2xl font-bold text-gray-800 pr-3">
-            Luna<span className="text-green-500">Pets</span>
+    <div className="h-24 bg-black shadow-md text-white">
+      <div className="flex md:justify-around items-center py-5 pr-5">
+        <div className="flex ">
+          <img className="w-7 md:w-10" 
+           src={icon} alt="" />
+          <h1 className=" text-2xl md:text-4xl font-bold text-white pr-3">
+            Luna<span className="text-[#36eb36]">Pets</span>
           </h1>
         </div>
 
-        <div className="relative flex items-center w-full max-w-md ">
+        <div className="relative flex items-center w-full ml-6 md:ml-20 ">
           <input
-            className="border border-gray-300 h-10 rounded-lg pl-10 pr-4 w-full" // Padding left added for space before the icon
+            className="border border-gray-300 h-12 rounded-lg pl-10 pr-4 w-full" 
             placeholder="Search Products..."
             onChange={handleChange}
             value={input}
             type="text"
           />
-          <FaSearch className="absolute left-3 text-gray-500" />
+          <FaSearch className="absolute left-3 text-gray-800" />
         </div>
 
         <div className="flex items-center gap-2 md:gap-10">
           {isLogine && (
             <Link to="/orders" className="flex items-center ml-2">
-              <MdVerified className="text-2xl md:text-4xl text-gray-800" />
+              <MdVerified className="text-2xl md:text-4xl text-white" />
               <button className="hidden md:block ml-2">Orders</button>
             </Link>
           )}
 
           {isLogine ? (
             <Link to="/cart" className="relative flex items-center">
-              <FaCartPlus className="text-2xl md:text-4xl text-gray-800" />
+              <FaCartPlus className="text-2xl md:text-4xl text-white" />
               <span className="absolute -top-2 -right-2 rounded-full bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center">
                 {cartCountSettings}
               </span>
@@ -126,14 +125,14 @@ const Navbar = () => {
           ) : (
             <FaCartPlus
               onClick={() => toast.warning("Please Login")}
-              className="text-2xl md:text-4xl text-gray-800"
+              className="text-2xl md:text-4xl text-white"
             />
           )}
 
           {isLogine ? (
             <div className="flex items-center gap-2 md:gap-10">
               <div onClick={handleLogout} className="flex items-center">
-                <MdLogout className="text-2xl md:text-4xl text-gray-800 cursor-pointer" />
+                <MdLogout className="text-2xl md:text-4xl text-white cursor-pointer" />
                 <button className="hidden md:block ml-2">LogOut</button>
               </div>
 
@@ -146,7 +145,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/signin" className="flex items-center">
-              <MdAccountCircle className="text-2xl md:text-4xl text-gray-800" />
+              <MdAccountCircle className="text-2xl md:text-4xl text-white" />
               <button className="hidden md:block ml-2">LogIn</button>
             </Link>
           )}

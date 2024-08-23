@@ -1,14 +1,16 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { RemovCart } from "../AllProducts/Addcart";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Navbar from "../HomePage/Navbar";
 import Footer from "../HomePage/Footer";
+import { Items } from "../MainPage/Main";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
    const navigate =useNavigate()
+   const {fetchUserData}=useContext(Items)
    
 
   const clickIncrease = (id) => {
@@ -31,6 +33,7 @@ const Cart = () => {
 
   const handleRemove = async (item) => {
     await RemovCart(item);
+    await fetchUserData()
     toast.success('Item deleted from the cart');
     setCart((prevCart) => prevCart.filter((e) => e.id !== item.id));
   };

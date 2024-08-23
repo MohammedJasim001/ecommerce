@@ -42,26 +42,17 @@ const AddProducts = () => {
   };
 
   const handleSaveProduct = async () => {
-    const {
-      id,
-      name,
-      price,
-      category,
-      image,
-      brand,
-      description,
-      ratings,
-    } = input;
-  
+    const { id, name, price, category, image, brand, description, ratings } =
+      input;
+
     const generatedId = id || Date.now().toString();
-  
-   
+
     const existingProduct = data.find((product) => product.id === generatedId);
     if (existingProduct) {
       toast.warning("ID already exists");
       return;
     }
-  
+
     if (
       !name ||
       !price ||
@@ -74,11 +65,11 @@ const AddProducts = () => {
       toast.warning("Fill the required details.");
       return;
     }
-  
+
     try {
       const response = await axios.post(`http://localhost:3000/products/`, {
         ...input,
-        id: generatedId, // Use the generated ID if not provided
+        id: generatedId,
       });
       setData([...data, response.data]);
       navigate("/admin/products");
@@ -88,11 +79,7 @@ const AddProducts = () => {
       console.log(err);
     }
   };
-  
-  
-  console.log(data);
-  
-  
+
   return (
     <div className="mt-8 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 md:flex justify-between shadow-lg gap-2">
@@ -175,8 +162,6 @@ const AddProducts = () => {
               onChange={handleChange}
             ></textarea>
           </div>
-
-          
         </div>
 
         <div className="flex-1 space-y-6">

@@ -1,16 +1,19 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { AddCarts } from "../AllProducts/Addcart";
 import Navbar from "../HomePage/Navbar";
 import Footer from "../HomePage/Footer";
+import { Items } from "../MainPage/Main";
 
 const ProductLists = () => {
   const { userId } = useParams();
   const [items, setItems] = useState([]);
+  const{fetchUserData}=useContext(Items)
 
-  const handleCarts = (e) => {
-    AddCarts(e);
+  const handleCarts = async(e) => {
+   await AddCarts(e);
+   await fetchUserData()
   };
 
   useEffect(() => {
