@@ -16,7 +16,7 @@ const Dog = () => {
           <img className='w-[99%]'
             src={dog} alt="" />
         </div>
-    <div className='grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 '>
+    <div className='grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 md:ml-7'>
       {data.filter((item)=>item.category==='Dog').map((dogproducts)=>(
         <DogProducts key={dogproducts.id} products={dogproducts}/>
       ))}

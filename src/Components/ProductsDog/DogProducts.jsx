@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router'
+import { Items } from '../MainPage/Main'
+import { AddCarts } from '../AllProducts/Addcart'
 
 
 
 const DogProducts = ({products}) => {
   const navigate = useNavigate()
+  const {fetchUserData}=useContext(Items)
+
+  const handleCarts = async(e) => {
+    await AddCarts(e);
+    await fetchUserData()
+   };
 
   return (
-    <div className="w-[200px] md:w-[250px] flex flex-col shadow-lg bg-white p-2 rounded-lg justify-between md:ml-3 transition duration-300 ease-in-out transform hover:scale-110">
+    <div className="w-[200px] md:w-[250px] flex flex-col shadow-lg bg-white p-2 rounded-lg justify-between md:ml-3 ">
       <div
         onClick={() => navigate(`/productdetails/${products.id}`)}
       >
@@ -21,12 +29,15 @@ const DogProducts = ({products}) => {
           <h1 className=" font-bold text-gray-900">
             {products.name}
           </h1>
-          <span className="text-green-600 font-bold ml-2">{products.ratings} ★</span>
+          <span className="text-green-600 font-bold">{products.ratings} ★</span>
           <h4 className="text-gray-900 text-lg font-semibold">
             ${products.price}
           </h4>
         </div>
+        
       </div>
+      <button onClick={()=>handleCarts(products)}
+         className='bg-[#65a30d] p-3 mt-2 rounded-md text-white'>ADD TO CART</button>
     </div>
   )
 }

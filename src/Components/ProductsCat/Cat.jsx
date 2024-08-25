@@ -17,7 +17,7 @@ const Cat = () => {
       <img className='w-[99%]'
         src={cat} alt="" />
     </div>
-     <div  className='grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 '>
+     <div  className='grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 md:ml-7'>
       
         {data.filter((item)=>item.category==='Cat').map((products)=>(
           <ProductsCat key={products.id} products={products}/>

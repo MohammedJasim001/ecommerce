@@ -460,6 +460,17 @@
           "ratings": "4.5",
           "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
         },
+        "3": {
+          "id": "3",
+          "name": "Furminator deShedding Tool",
+          "brand": "Furminator",
+          "category": "Cat",
+          "item": "Cat Grooming",
+          "price": 29.99,
+          "description": "Reduces shedding up to 90% with regular use.",
+          "ratings": 4.7,
+          "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
+        },
         "4": {
           "id": "4",
           "name": "Purina Pro Plan Savor Adult",

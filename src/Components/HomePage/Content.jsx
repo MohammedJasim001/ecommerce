@@ -65,7 +65,7 @@ const Content = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 md:ml-7">
           {data.slice(0, 10).map((product) => (
             <Products key={product.id} product={product} />
           ))}
@@ -78,7 +78,7 @@ const Content = () => {
         <div className="text-2xl md:text-3xl font-sans font-bold ml-10 text-gray-900 mt-16">
           Trending Now
         </div>
-        <div className="grid gap-3 pt-10 md:ml-5 grid-cols-2 md:grid-cols-5">
+        <div className="grid gap-3 pt-10 md:ml-7 grid-cols-2 md:grid-cols-5">
           {data
             .filter((ele) => ele.bestseller === true)
             .map((best) => (
