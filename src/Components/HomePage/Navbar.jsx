@@ -7,13 +7,12 @@ import { MdLogout, MdVerified, MdAccountCircle } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "sonner";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import Swal from "sweetalert2";
 import icon from "../Assets/icon.png"
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { data, cartCount, fetchUserData } = useContext(Items);
+  const { data, cartCount} = useContext(Items);
   const [input, setInput] = useState("");
   const [isLogine, setIsLogine] = useState(false);
   const [isDrop, setIsDrop] = useState(false);

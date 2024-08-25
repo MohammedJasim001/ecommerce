@@ -447,19 +447,6 @@
       "password": "1111",
       "cpassword": "1111",
       "cart": {
-        "2": {
-          "id": "2",
-          "name": "Organic Cat Food",
-          "category": "Cat",
-          "brand": "Meow Mix",
-          "item": "Cat Food",
-          "qty": "1 kg",
-          "price": 39.99,
-          "stock": 200,
-          "description": "Organic and grain-free cat food for optimal health.",
-          "ratings": "4.5",
-          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        },
         "3": {
           "id": "3",
           "name": "Furminator deShedding Tool",
@@ -471,17 +458,28 @@
           "ratings": 4.7,
           "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
         },
-        "4": {
-          "id": "4",
-          "name": "Purina Pro Plan Savor Adult",
-          "brand": "Purina Pro Plan",
-          "category": "Dog",
-          "item": "Dog Food",
-          "qty": "1 kg",
-          "description": "Dry dog food with a blend of crunchy kibble and tender meaty pieces.",
+        "7": {
+          "id": "7",
+          "name": "Whiskas Dry Cat Food",
+          "brand": "Whiskas",
+          "category": "Cat",
+          "item": "Cat Food",
+          "qty": "950 g",
+          "price": 18.99,
+          "description": "Delicious dry cat food for everyday nutrition.",
+          "ratings": 4.8,
+          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+        },
+        "9": {
+          "id": "9",
+          "name": "Tidy Cats Breeze Litter System",
+          "brand": "Tidy Cats",
+          "category": "Cat",
+          "item": "Cat Litter",
+          "price": 29.99,
+          "description": "Innovative litter system with pellets and pads.",
           "ratings": 4.5,
-          "price": 47.99,
-          "image": "https://images.north40.com/images/48206/BA_purina_pro_plan_savor_adult_shredded_blend_beef_and_rice_formula_dry_dog_food_35lb_48206.jpg?width=900&height=900"
+          "image": "https://th.bing.com/th/id/OIP.e7z9Wt754RtTO58l0mXgaQHaHa?rs=1&pid=ImgDetMain"
         }
       },
       "blocked": false,
