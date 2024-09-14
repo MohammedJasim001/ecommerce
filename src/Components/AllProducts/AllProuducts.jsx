@@ -14,7 +14,7 @@ const AllProuducts = ({ products }) => {
    };
 
   return (
-    <div className="w-[200px] md:w-[250px] flex flex-col shadow-lg bg-white p-2 rounded-lg justify-between md:ml-3 ">
+    <div className="w-[200px] md:w-[300px] flex flex-col shadow-lg bg-white p-2 rounded-lg justify-between md:ml-3 mt-10">
       <div onClick={() => navigate(`/productdetails/${products.id}`)}>
         <img
           className="w-[200px] gap-2 rounded-lg m-auto mt-3 h-[200px] "

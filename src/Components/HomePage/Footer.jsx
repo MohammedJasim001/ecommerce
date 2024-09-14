@@ -2,54 +2,68 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 mt-5">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
-          <div className="mb-8 md:mb-0 w-full md:w-1/4 text-center md:text-left">
-            <h2 className="text-xl font-semibold mb-4">About Us</h2>
-            <p className="text-sm">
-              We are dedicated to providing the best products and services for your pets. Your pet's health and happiness are our top priority.
+    <footer className="bg-[#d8c8b5] text-black py-10 mt-10">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* About Us */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">About Us</h2>
+            <p className="text-gray-900 text-sm leading-relaxed">
+              We are dedicated to providing the best products and services for your pets. Your pet's health and happiness are our top priority. From quality food to essential accessories, we’ve got you covered.
             </p>
           </div>
-          <div className="mb-8 md:mb-0 w-full md:w-1/4 text-center md:text-left md:pl-16">
-            <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
-            <ul className="text-sm space-y-2">
-              <li><a href="/" className="hover:underline">Home</a></li>
-              <li><a href="/shop" className="hover:underline">Shop</a></li>
-              <li><a href="/about" className="hover:underline">About</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
+
+          {/* Quick Links */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
+            <ul className="text-sm space-y-3">
+              <li><a href="/" className="hover:text-gray-500">Home</a></li>
+              <li><a href="/allproducts" className="hover:text-gray-500">Shop</a></li>
+              <li><a href="/about" className="hover:text-gray-500">About</a></li>
+              <li><a href="/contact" className="hover:text-gray-500">Contact</a></li>
             </ul>
           </div>
-          <div className="mb-8 md:mb-0 w-full md:w-1/4 text-center md:text-left">
-            <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
-            <p className="text-sm">Email: support@petshop.com</p>
-            <p className="text-sm">Phone: +1 234 567 890</p>
-            <p className="text-sm">Address: 123 Pet Street, Pet City, PC 12345</p>
+
+          {/* Contact Us */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+            <p className="text-sm text-gray-900 leading-relaxed">
+              <span className="font-medium text-black">Email:</span> support@petshop.com
+            </p>
+            <p className="text-sm text-gray-900 leading-relaxed">
+              <span className="font-medium text-black">Phone:</span> +1 234 567 890
+            </p>
+            <p className="text-sm text-gray-900 leading-relaxed">
+              <span className="font-medium text-black">Address:</span> 123 Pet Street, Pet City, PC 12345
+            </p>
           </div>
-          <div className="w-full md:w-1/4 text-center md:text-left">
-            <h2 className="text-xl font-semibold mb-4">Follow Us</h2>
-            <div className="flex justify-center md:justify-start gap-5">
+
+          {/* Follow Us */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Follow Us</h2>
+            <div className="flex gap-5">
               <a href="https://www.linkedin.com/feed/"
-                 className="flex items-center justify-center border-2 border-white hover:border-[#020617] h-[50px] w-[50px] rounded-full bg-[#020617] hover:bg-white">
-                <i className='bx hover:text-[#020617] text-white bxl-linkedin-square'></i>
+                className="flex items-center justify-center h-12 w-12 rounded-full bg-[#020617] hover:bg-gray-500 transition duration-300">
+                <i className='bx bxl-linkedin-square text-2xl text-white'></i>
               </a>
               <a href="https://www.instagram.com/_jasim_at/"
-                 className="flex items-center justify-center border-2 border-white hover:border-[#020617] h-[50px] w-[50px] rounded-full bg-[#020617] hover:bg-white">
-                <i className='bx hover:text-[#020617] text-white bxl-instagram-alt'></i>
+                className="flex items-center justify-center h-12 w-12 rounded-full bg-[#020617] hover:bg-gray-500 transition duration-300">
+                <i className='bx bxl-instagram-alt text-2xl text-white'></i>
               </a>
               <a href="https://wa.me/7510180451"
-                 className="flex items-center justify-center border-2 border-white hover:border-[#020617] h-[50px] w-[50px] rounded-full bg-[#020617] hover:bg-white">
-                <i className='bx hover:text-[#020617] text-white bxl-whatsapp'></i>
+                className="flex items-center justify-center h-12 w-12 rounded-full bg-[#020617] hover:bg-gray-500 transition duration-300">
+                <i className='bx bxl-whatsapp text-2xl text-white'></i>
               </a>
               <a href="https://github.com/MohammedJasim001"
-                 className="flex items-center justify-center border-2 border-white hover:border-[#020617] h-[50px] w-[50px] rounded-full bg-[#020617] hover:bg-white">
-                <i className='bx hover:text-[#020617] text-white bxl-facebook'></i>
+                className="flex items-center justify-center h-12 w-12 rounded-full bg-[#020617] hover:bg-gray-500 transition duration-300">
+                <i className='bx bxl-facebook text-2xl text-white'></i>
               </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
-          &copy; 2024 PetShop. All rights reserved.
+
+        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-900">
+          &copy; 2024 Luna's Pet Shop. All rights reserved.
         </div>
       </div>
     </footer>

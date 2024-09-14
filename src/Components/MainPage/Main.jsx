@@ -12,6 +12,8 @@ import axios from 'axios'
 import BuyNow from '../Cart/Buy/BuyNow'
 import Orders from '../HomePage/Orders'
 import NonofThis from './NonofThis'
+import About from '../HomePage/Pages/About'
+import Contact from '../HomePage/Pages/Contact'
 
 export const Items=createContext()
 
@@ -74,6 +76,8 @@ useEffect(()=>{
         <Route path='/buynow' element={<BuyNow/>}/>
         <Route path='/orders' element={<Orders/>}/>
         <Route path='*' element={<NonofThis/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
           
         
        

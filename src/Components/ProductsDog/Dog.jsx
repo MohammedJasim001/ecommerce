@@ -12,11 +12,11 @@ const Dog = () => {
     <div >
       <Navbar/>
       {/* <h1 className="mb-2 text-3xl font-bold tracking-tight md:ml-10 mt-5">Dog</h1> */}
-        <div className='flex items-center justify-center mt-5 md:mt-10'>
+        <div className='flex items-center mt-5 justify-center md:mt-10'>
           <img className='w-[99%]'
             src={dog} alt="" />
         </div>
-    <div className='grid grid-cols-2 md:grid-cols-5 gap-3 pt-10 md:ml-7'>
+    <div className='grid grid-cols-2 md:grid-cols-5 md:pt-10 md:mx-10'>
       {data.filter((item)=>item.category==='Dog').map((dogproducts)=>(
         <DogProducts key={dogproducts.id} products={dogproducts}/>
       ))}

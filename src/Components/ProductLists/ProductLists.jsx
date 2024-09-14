@@ -53,9 +53,9 @@ const ProductLists = () => {
                 </p>
               </div>
 
-              {/* Product Information */}
+              
               <div className="text-base font-semibold space-y-2">
-                {/* Show Quantity if Available */}
+             
                 {datas.qty && (
                   <div>
                     <span className="font-medium text-gray-600">Quantity: </span>

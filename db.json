@@ -218,6 +218,7 @@
       "brand": "Petstages",
       "category": "Cat",
       "item": "Cat Accessories",
+      "bestseller": true,
       "price": 14.99,
       "description": "Interactive toy with multiple levels and balls.",
       "ratings": 4.4,
