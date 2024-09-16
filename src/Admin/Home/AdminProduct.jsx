@@ -180,7 +180,7 @@ const AdminProduct = () => {
                 ))}
               </div>
               <button
-                className="bg-blue-500 p-3 hover:bg-blue-600 text-white font-bold shadow-black shadow-md rounded-sm w-[100px] "
+                className="bg-blue-500 p-3 hover:bg-blue-600 text-white font-bold  rounded-md w-[100px] "
                 onClick={() => setIsOPen(false)}
               >
                 Back

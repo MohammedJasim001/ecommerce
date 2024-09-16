@@ -80,6 +80,12 @@ const AddProducts = () => {
     }
   };
 
+  const handleCancel = ()=>{
+    setInput({
+      id:'',name:'',price:'',category:'',image:'',brand:'',description:'',ratings:'',item:'',qty:''
+    })
+  }
+
   return (
     <div className="mt-8 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 md:flex justify-between shadow-lg gap-2">
@@ -225,7 +231,7 @@ const AddProducts = () => {
           </div>
           <div className="flex justify-end space-x-4">
             <button
-              onClick={() => setInput("")}
+              onClick={handleCancel}
               className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-200"
             >
               Cancel

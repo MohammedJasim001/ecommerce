@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AdminProduct from "./AdminProduct";
 import Users from "./Users";
@@ -9,23 +9,39 @@ import { FaUsers } from "react-icons/fa";
 import { IoIosCart } from "react-icons/io";
 import { BiCartAdd } from "react-icons/bi";
 import { MdSpaceDashboard } from "react-icons/md";
+import { Products } from "../AdminMain/AdminMain";
+import AdminSearch from "./Search/AdminSearch";
 
 const AdminHome = () => {
-  const navigate = useNavigate()
+
+  const {data}=useContext(Products)
+
+  const navigate = useNavigate();
   const { url } = useParams();
+
+  const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const Data = [
-    { title: "Users", url: "users", icon:<FaUsers /> },
-    { title: "Products", url: "products", icon:<IoIosCart /> },
-    { title: "Dashboard", url: "dashbord", icon:<MdSpaceDashboard />},
-    { title: "Add Products", url: "addproducts",icon:<BiCartAdd /> },
+    { title: "Users", url: "users", icon: <FaUsers /> },
+    { title: "Products", url: "products", icon: <IoIosCart /> },
+    { title: "Dashboard", url: "dashbord", icon: <MdSpaceDashboard /> },
+    { title: "Add Products", url: "addproducts", icon: <BiCartAdd /> },
   ];
 
-  const handleLogout = ()=>{
-    localStorage.clear()
-    navigate('/signin')
-  }
+  const result = data.filter((item)=>{
+    return(
+      input&&
+      item&&
+      item.name&&
+      item.name.toLowerCase().includes(input.toLocaleLowerCase())
+    )
+  })
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/signin");
+  };
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100 w-full absolute">
@@ -40,19 +56,32 @@ const AdminHome = () => {
             </button>
             <div className="text-xl font-semibold text-white">Admin</div>
           </div>
+
           <div className="flex gap-5">
-            <div className="flex items-center">              
-                <button onClick={()=>navigate(`/`)}
-                  className="text-white hover:text-gray-300 mr-4">
-                  User Page
-                </button>
+            <div>
+              <input
+                className="border relative md:w-[350px] h-10 rounded-md border-black mr-2"
+                placeholder="serch product"
+                type="text"
+                value={input}
+                onChange={(e)=>setInput(e.target.value)}
+              />
             </div>
             <div className="flex items-center">
-                <button onClick={handleLogout}
-                  className="text-white hover:text-gray-300 mr-4">
-                  Logo Out
-                </button>
-              
+              <button
+                onClick={() => navigate(`/`)}
+                className="text-white hover:text-gray-300 mr-4"
+              >
+                User Page
+              </button>
+            </div>
+            <div className="flex items-center">
+              <button
+                onClick={handleLogout}
+                className="text-white hover:text-gray-300 mr-4"
+              >
+                Logo Out
+              </button>
             </div>
           </div>
         </div>
@@ -71,8 +100,8 @@ const AdminHome = () => {
             onClick={() => setIsOpen(false)}
           >
             <div className="hover:bg-[#34d399] rounded px-6 py-2 mb-4 flex items-center text-xl gap-2">
-             <div className="text-4xl text-black"> {item.icon}</div>
-             <div> {item.title}</div>
+              <div className="text-4xl text-black"> {item.icon}</div>
+              <div> {item.title}</div>
             </div>
           </Link>
         ))}
@@ -90,6 +119,9 @@ const AdminHome = () => {
         ) : (
           <div>404 error....</div>
         )}
+      </div>
+      <div>
+        <AdminSearch result={result} setInput={setInput}/>
       </div>
     </div>
   );
