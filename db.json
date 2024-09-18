@@ -341,21 +341,7 @@
       "password": "1234",
       "cpassword": "1234",
       "admin": true,
-      "cart": {
-        "2": {
-          "id": "2",
-          "name": "Organic Cat Food",
-          "category": "Cat",
-          "brand": "Meow Mix",
-          "item": "Cat Food",
-          "qty": "1 kg",
-          "price": 39.99,
-          "stock": 200,
-          "description": "Organic and grain-free cat food for optimal health.",
-          "ratings": "4.5",
-          "image": "https://i.pinimg.com/736x/2b/c1/e7/2bc1e784ceefabbd3b0f9c4fbab5d1a3.jpg"
-        }
-      }
+      "cart": {}
     },
     {
       "id": "3263",
@@ -459,28 +445,28 @@
           "ratings": 4.7,
           "image": "https://th.bing.com/th/id/OIP.FtSyW18sL8i0SEChkigHBgHaG6?rs=1&pid=ImgDetMain"
         },
-        "7": {
-          "id": "7",
-          "name": "Whiskas Dry Cat Food",
-          "brand": "Whiskas",
-          "category": "Cat",
-          "item": "Cat Food",
-          "qty": "950 g",
-          "price": 18.99,
-          "description": "Delicious dry cat food for everyday nutrition.",
+        "5": {
+          "id": "5",
+          "name": "Dog Bed",
+          "category": "Dog",
+          "brand": "Comfy Canine",
+          "item": "Dog Accessories",
+          "price": 59.99,
+          "stock": 40,
+          "description": "Orthopedic dog bed with memory foam.",
           "ratings": 4.8,
-          "image": "https://th.bing.com/th/id/OIP.v9mjLB1Ir0rt5jkhaKPR_QHaHa?rs=1&pid=ImgDetMain"
+          "image": "https://i5.walmartimages.com/asr/f3142e66-9ca4-49db-a229-87a09f284f22_2.4c65b46849a5e3c2540824bacc75bb48.jpeg"
         },
-        "9": {
-          "id": "9",
-          "name": "Tidy Cats Breeze Litter System",
-          "brand": "Tidy Cats",
-          "category": "Cat",
-          "item": "Cat Litter",
-          "price": 29.99,
-          "description": "Innovative litter system with pellets and pads.",
-          "ratings": 4.5,
-          "image": "https://th.bing.com/th/id/OIP.e7z9Wt754RtTO58l0mXgaQHaHa?rs=1&pid=ImgDetMain"
+        "6": {
+          "id": "6",
+          "name": "PetSafe Easy Walk Harness",
+          "brand": "PetSafe",
+          "category": "Dog",
+          "item": "Dog Accessories",
+          "price": 26.99,
+          "description": "No-pull harness for easier walks.",
+          "ratings": 4.4,
+          "image": "https://th.bing.com/th/id/R.9ee5e418e7d842f2fa716037f9a211be?rik=FIRkrAsopXzXcw&riu=http%3a%2f%2fs7d1.scene7.com%2fis%2fimage%2fPETCO%2f2255605-right-1&ehk=ZWkqDHLvYMgvMowxYRtg2J9NRMyurtDWnpI2pNG7o0I%3d&risl=&pid=ImgRaw&r=0"
         }
       },
       "blocked": false,

@@ -9,7 +9,7 @@ const About = () => {
       
       <div className="container mx-auto px-6 lg:px-20">
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-[#cc8b41] mb-8">
+          <h1 className="text-5xl font-extrabold text-[#5b9e5b] mb-8">
             About Luna's Pet Shop
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -23,7 +23,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
           {/* High-Quality Products */}
           <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            <FaPaw className="text-[#cc8b41] text-5xl mb-4 mx-auto" />
+            <FaPaw className="text-[#5b9e5b] text-5xl mb-4 mx-auto" />
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               High-Quality Products
             </h3>
@@ -36,7 +36,7 @@ const About = () => {
 
           {/* Customer Satisfaction */}
           <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            <FaSmile className="text-[#cc8b41] text-5xl mb-4 mx-auto" />
+            <FaSmile className="text-[#5b9e5b] text-5xl mb-4 mx-auto" />
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               Customer Satisfaction
             </h3>
@@ -48,7 +48,7 @@ const About = () => {
 
           {/* Passion for Pets */}
           <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            <FaHeart className="text-[#cc8b41] text-5xl mb-4 mx-auto" />
+            <FaHeart className="text-[#5b9e5b] text-5xl mb-4 mx-auto" />
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               Passion for Pets
             </h3>
@@ -68,7 +68,7 @@ const About = () => {
         </div>
         <button 
   onClick={() => navigate('/')}
-  className="bg-[#cc8b41] p-2 text-white rounded-md mt-8 m-auto block"
+  className="bg-[#5b9e5b] p-2 text-white rounded-md mt-8 m-auto block"
 >
   Back to home
 </button>

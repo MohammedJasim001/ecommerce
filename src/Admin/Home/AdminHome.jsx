@@ -11,6 +11,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { MdSpaceDashboard } from "react-icons/md";
 import { Products } from "../AdminMain/AdminMain";
 import { CiLogout } from "react-icons/ci";
+import { RiUserSharedLine } from "react-icons/ri";
 
 const AdminHome = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -73,17 +74,18 @@ const AdminHome = () => {
                   onChange={(e) => setInput(e.target.value)}
                 />
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center gap-2 text-white hover:text-gray-300"
+                onClick={() => navigate(`/`)}>
+              <RiUserSharedLine  className="text-2xl"/>
                 <button
-                  onClick={() => navigate(`/`)}
-                  className="text-white hover:text-gray-300 md:mr-4"
+                  className=" md:mr-4 hidden md:block"
                 >
-                  User 
+                  User Page
                 </button>
               </div>
-              <div className="flex items-center gap-2" onClick={handleLogout}>
-                <CiLogout className="text-2xl text-white" />
-                <button className="text-white hover:text-gray-300 mr-4 hidden md:block">
+              <div className="flex items-center gap-2 text-white hover:text-gray-300" onClick={handleLogout}>
+                <CiLogout className="text-2xl " />
+                <button className=" mr-4 hidden md:block">
                   Log Out
                 </button>
               </div>
@@ -99,11 +101,11 @@ const AdminHome = () => {
           {Data.map((item, ind) => (
             <Link
               key={ind}
-              className="block w-[80%] mx-auto"
+              className="block w-[80%] mx-auto "
               to={`/admin/${item.url}`}
               onClick={() => setIsOpen(false)}
             >
-              <div className="hover:bg-[#34d399] rounded px-6 py-2 mb-4 flex items-center text-xl gap-2">
+              <div className="hover:bg-[#34d399] rounded px-6 py-2 mb-4 flex items-center text-xl gap-2" >
                 <div className="text-4xl text-black"> {item.icon}</div>
                 <div> {item.title}</div>
               </div>
@@ -125,7 +127,7 @@ const AdminHome = () => {
           )}
         </div>
 
-        <div className="fixed top-14 mt-1 w-[300px] md:w-[350px] bg-white z-40 rounded shadow-md right-16 md:right-56 ">
+        <div className="fixed top-14 mt-1 w-[300px] md:w-[350px] bg-white z-40 rounded shadow-md right-16 md:right-72 md:mr-2">
           {result.map((details, id) => (
             <div 
               className="cursor-pointer hover:bg-gray-200 px-4 py-2 "

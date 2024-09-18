@@ -20,9 +20,16 @@ function App() {
        setAdm(admin) 
       }
   },[])
+
   return (
     <div className="App">
-<Toaster richColors position='top-right'/>
+<Toaster richColors position='top-right'
+   toastOptions={{
+    style: {
+      fontSize: '1.2rem',
+      padding: '16px', 
+    },
+  }}/>
 {adm &&
     <Admins/> }
     

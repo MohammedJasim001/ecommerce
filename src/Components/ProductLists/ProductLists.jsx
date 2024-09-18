@@ -26,7 +26,7 @@ const ProductLists = () => {
   return (
     <div>
       <Navbar />
-      <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
+      <div className="p-4 md:p-8 bg-gray-100">
         {items.map((datas) => (
           <div
             key={datas.id}

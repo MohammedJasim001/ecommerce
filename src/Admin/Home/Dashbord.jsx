@@ -1,9 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Products } from '../AdminMain/AdminMain';
+import axios from 'axios';
 
 const Dashbord = () => {
-  const { data, users } = useContext(Products);
+  const {  users } = useContext(Products);
+  const [data,setData] = useState([])
 
+  const fn = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/products");
+      setData(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fn();
+  }, []);
   
   const totalOrders = users.reduce((acc, user) => {
     if (user.orderedProducts && Object.keys(user.orderedProducts).length > 0) {

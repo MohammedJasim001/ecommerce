@@ -68,13 +68,13 @@ const AdminProduct = () => {
           <div className="mt-8 ">
             <ul className="flex items-center justify-around text-lg font-bold bg-gray-200 h-16 rounded-t-lg">
               <div className="flex items-center md:justify-around text-lg font-bold  h-16 rounded-t-lg w-[100%]">
-              <li className="px-4 py-2 w-[10%] md:w-[10%] text-center">ID</li>
-              <li className="px-4 py-2 w-[40%] md:w-[30%] text-center">Name</li>
+              <li className="px-4 py-2  md:w-[10%] text-center">ID</li>
+              <li className="px-4 py-2  md:w-[30%] text-center">Name</li>
               <li className="hidden md:block px-4 py-2 w-[20%] text-center">
                 Image
               </li>
               </div>
-              <li className="px-4 py-2 w-[30%] md:w-[20%] text-center">Actions</li>
+              <li className="px-4 py-2  md:w-[20%] text-center mr-8 md:mr-0">Actions</li>
             </ul>
             <div></div>
             {data.map((product) => (
@@ -84,10 +84,10 @@ const AdminProduct = () => {
                   key={product.id}
                   className="flex items-center md:justify-around   text-sm sm:text-base transition duration-300 w-[100%]"
                 >
-                  <div className="px-4 py-2 w-[10%] md:w-[10%] text-center">
+                  <div className="px-4 py-2  md:w-[10%] text-center">
                     {product.id}
                   </div>
-                  <div className="px-4 py-2 w-[40%] md:w-[30%] text-center truncate ">
+                  <div className="px-4 py-2 md:w-[30%]  ">
                     {product.name}
                   </div>
                   <div className="hidden  px-4 py-2 w-[20%] md:flex justify-center">
@@ -98,7 +98,7 @@ const AdminProduct = () => {
                     />
                   </div>
                 </div>
-                <div className="md:flex md:space-x-2 px-4 py-2 justify-center w-[30%] md:w-[20%]">
+                <div className="flex space-x-2 px-4 py-2 justify-center md:w-[20%] ">
                   <button
                     onClick={() => handleEdit(product)}
                     className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition duration-300 ml-2"
@@ -191,7 +191,7 @@ const AdminProduct = () => {
       </div>
       <div>
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-auto ">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-auto pt-5">
             <div className="bg-white rounded-lg w-full max-w-4xl p-8 space-y-6 md:flex justify-between shadow-lg gap-2">
               <div className="flex-1 space-y-6 ">
                 <h2 className="text-2xl font-semibold text-gray-800">

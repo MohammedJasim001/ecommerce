@@ -30,10 +30,10 @@ const Content = () => {
         />
       </div>
 
-      <div className="font-serif text-xl md:text-4xl bg-green-950 h-20 text-white flex items-center justify-center gap-5 text-center">
+      <div className=" mt-3 text-xl md:text-4xl bg-gradient-to-r from-[#ee6938] to-[#459517] h-20 text-white flex items-center justify-center gap-5 text-center">
         <h1>
           Get
-          <span className="text-green-800 text-2xl md:text-4xl">
+          <span className="text-[#73d23c] text-2xl md:text-4xl">
             {" "}
             10% off
           </span>{" "}
