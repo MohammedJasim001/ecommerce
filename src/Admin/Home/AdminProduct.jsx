@@ -66,7 +66,8 @@ const AdminProduct = () => {
       <div>
         {!open ? (
           <div className="mt-8 ">
-            <ul className="flex items-center justify-around text-lg font-bold bg-gray-200 h-16 rounded-t-lg">
+            <h2 className="text-2xl font-semibold text-gray-800">Product List</h2>
+            <ul className="flex items-center justify-around text-lg font-bold bg-gray-200 h-16 rounded-t-lg mt-3">
               <div className="flex items-center md:justify-around text-lg font-bold  h-16 rounded-t-lg w-[100%]">
               <li className="px-4 py-2  md:w-[10%] text-center">ID</li>
               <li className="px-4 py-2  md:w-[30%] text-center">Name</li>
